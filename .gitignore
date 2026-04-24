@@ -1,0 +1,4 @@
+test/assets/*.mov
+test/assets/*.mp4
+node_modules/
+dist/

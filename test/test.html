@@ -1,0 +1,2254 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Laras Ardhaningtyas — Portfolio</title>
+    <!-- Material Symbols -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Dancing+Script:wght@700&family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#002203",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#7ffd7c",
+                        "surface-bright": "#f9f9f9",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "on-surface": "#1a1c1c",
+                        "inverse-on-surface": "#f1f1f1",
+                        "primary-container": "#e30071",
+                        "on-primary-fixed": "#3f001a",
+                        "tertiary-container": "#008820",
+                        "on-background": "#1a1c1c",
+                        "primary": "#b60059",
+                        "on-surface-variant": "#5c3f46",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "secondary": "#5f5e5e",
+                        "surface-variant": "#e2e2e2",
+                        "outline": "#906e76",
+                        "primary-fixed-dim": "#ffb1c4",
+                        "surface-dim": "#dadada",
+                        "on-primary-container": "#fffbff",
+                        "surface-container-low": "#f3f3f3",
+                        "surface": "#f9f9f9",
+                        "secondary-container": "#e2dfde",
+                        "on-primary-fixed-variant": "#8f0044",
+                        "surface-container-high": "#e8e8e8",
+                        "outline-variant": "#e5bcc5",
+                        "tertiary-fixed-dim": "#63e063",
+                        "surface-container": "#eeeeee",
+                        "on-primary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface-tint": "#ba005b",
+                        "tertiary": "#006b17",
+                        "inverse-primary": "#ffb1c4",
+                        "background": "#f9f9f9",
+                        "on-tertiary-fixed-variant": "#00530f",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-tertiary-container": "#f7fff0",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-surface": "#2f3131",
+                        "primary-fixed": "#ffd9e1",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#474746",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-secondary-container": "#636262"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "160px",
+                        "container-max": "1280px",
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "margin": "64px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Newsreader"],
+                        "body-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "display-lg": ["Newsreader"],
+                        "label-caps": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", { "lineHeight": "1.2", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "300" }],
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .paper-grain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 99;
+            opacity: 0.03;
+            background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBxtJAay7NrlBcd-tD3HJdkNXsVulN-CBYNHGAjpwyFHVHliDpbbxvthZjIRiaaK4DQBRIQ9L7wCWKcNx1lhQV-_PfAmLMaW0GtB6VFl8bC3ePYLd9ThZIcVYr-oENrwnq04LpSviVG1bRPhz0y135CfudnwS3tKubBs-GafNmkDV8KFiungfLlzfceN5TvXOz7HG87Ud9Eh9U0cpHwbfJ9SyZgfUEFDdJT0tTEMxN9gP1hRW1vK--jdEUCD0JxWvBejtyXraPdY0I)
+        }
+
+        .polaroid {
+            background: white;
+            padding: 10px 10px 30px 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transform: rotate(-2deg)
+        }
+
+        .polaroid-alt {
+            transform: rotate(3deg)
+        }
+
+        .custom-cursor {
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='%23FF007F'%3E%3Cpath d='M7 2l12 11.2-5.8 1.3 3.3 5.5-2.2 1.3-3.3-5.5-4 4.2V2z'/%3E%3C/svg%3E"), auto
+        }
+
+        .toile-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 10c2-2 5-2 7 0s2 5 0 7-5 2-7 0-2-5 0-7zm40 40c2-2 5-2 7 0s2 5 0 7-5 2-7 0-2-5 0-7zm30-20c2-2 5-2 7 0s2 5 0 7-5 2-7 0-2-5 0-7z' fill='%23000' fill-opacity='0.03'/%3E%3C/svg%3E");
+        }
+
+        .torn-paper {
+            clip-path: polygon(0% 2%, 5% 0%, 10% 3%, 15% 1%, 20% 4%, 25% 2%, 30% 5%, 35% 2%, 40% 6%, 45% 3%, 50% 7%, 55% 4%, 60% 8%, 65% 5%, 70% 9%, 75% 6%, 80% 10%, 85% 7%, 90% 11%, 95% 8%, 100% 12%, 100% 100%, 0% 100%);
+        }
+
+        .y2k-sparkle {
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        }
+
+        @keyframes popIn {
+            0% {
+                transform: scale(0) rotate(-180deg);
+                opacity: 0;
+            }
+
+            60% {
+                transform: scale(1.15) rotate(15deg);
+                opacity: 1;
+            }
+
+            80% {
+                transform: scale(0.95) rotate(-5deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1) rotate(0deg);
+                opacity: 1;
+            }
+        }
+
+        @keyframes float1 {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(-5deg);
+            }
+
+            50% {
+                transform: translateY(-15px) rotate(5deg);
+            }
+        }
+
+        @keyframes float2 {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(3deg);
+            }
+
+            50% {
+                transform: translateY(-10px) rotate(-3deg);
+            }
+        }
+
+        @keyframes float3 {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(12px) rotate(4deg);
+            }
+        }
+
+        /* Scroll Reveal Animation Enhanced */
+        .reveal {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+            visibility: hidden;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+            visibility: visible;
+        }
+
+        .delay-100 {
+            transition-delay: 100ms;
+        }
+
+        .delay-200 {
+            transition-delay: 200ms;
+        }
+
+        .delay-300 {
+            transition-delay: 300ms;
+        }
+
+        .delay-400 {
+            transition-delay: 400ms;
+        }
+
+        /* Polaroid Effect */
+        .polaroid-frame {
+            background: white;
+            padding: 15px 15px 45px 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transform: rotate(-3deg);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .polaroid-frame:hover {
+            transform: rotate(0deg) scale(1.05);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+            z-index: 50;
+        }
+
+        /* Heboh Animation */
+        @keyframes hebohEntrance {
+            0% {
+                transform: scale(0) rotate(-90deg) translateY(200px);
+                opacity: 0;
+                filter: blur(20px);
+            }
+
+            50% {
+                transform: scale(1.2) rotate(15deg);
+                opacity: 0.8;
+                filter: blur(5px);
+            }
+
+            80% {
+                transform: scale(0.9) rotate(-5deg);
+                opacity: 1;
+                filter: blur(0px);
+            }
+
+            100% {
+                transform: scale(1) rotate(-3deg);
+                opacity: 1;
+            }
+        }
+
+        .animate-heboh {
+            animation: hebohEntrance 1.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        /* Journey Specific Animation */
+        .journey-reveal {
+            opacity: 0;
+            transform: translateY(80px) scale(0.9) rotateX(10deg);
+            filter: blur(10px);
+            transition: all 1.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+            visibility: hidden;
+        }
+
+        .journey-reveal.active {
+            opacity: 1;
+            transform: translateY(0) scale(1) rotateX(0);
+            filter: blur(0);
+            visibility: visible;
+        }
+
+        /* Spin Animation for Thank You page */
+        @keyframes spinLucu {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .animate-spin-slow {
+            animation: spinLucu 12s linear infinite;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-background font-body-lg custom-cursor overflow-x-hidden">
+    <!-- Tactile Paper Overlay -->
+    <div class="paper-grain"></div>
+    <!-- Navigation Shell -->
+    <nav class="fixed top-0 w-full z-50 pointer-events-none py-8 px-8 md:px-16">
+        <div class="max-w-[1440px] mx-auto flex justify-between items-center w-full">
+
+            <!-- Logo -->
+            <div
+                class="font-serif italic text-2xl text-stone-900 dark:text-stone-100 pointer-events-auto drop-shadow-sm">
+                Laras Praba
+            </div>
+
+            <!-- Central Pill -->
+            <div
+                class="absolute left-1/2 -translate-x-1/2 top-6 pointer-events-auto bg-[#FDFDFD]/80 backdrop-blur-xl dark:bg-stone-900/80 border border-stone-200/60 dark:border-stone-800/60 rounded-full px-8 py-3 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.1)] flex items-center space-x-10">
+                <a class="font-sans text-[15px] font-medium text-[#FF007F] transition-all duration-300 ease-in-out hover:opacity-70"
+                    href="#home">Home</a>
+                <a class="font-sans text-[15px] font-medium text-stone-500 hover:text-stone-900 dark:text-stone-400 dark:hover:text-stone-100 transition-all duration-300 ease-in-out"
+                    href="#journey">Journey</a>
+                <a class="font-sans text-[15px] font-medium text-stone-500 hover:text-stone-900 dark:text-stone-400 dark:hover:text-stone-100 transition-all duration-300 ease-in-out"
+                    href="#project">Projects</a>
+                <a class="font-sans text-[15px] font-medium text-stone-500 hover:text-stone-900 dark:text-stone-400 dark:hover:text-stone-100 transition-all duration-300 ease-in-out"
+                    href="#contact">Contact</a>
+            </div>
+
+            <!-- Right Side Icons -->
+            <div class="flex items-center gap-5 text-[#FF007F] pointer-events-auto drop-shadow-sm">
+                <span
+                    class="material-symbols-outlined transition-all hover:scale-110 hover:opacity-70 cursor-pointer">mail</span>
+                <span
+                    class="material-symbols-outlined transition-all hover:scale-110 hover:opacity-70 cursor-pointer">motion_photos_on</span>
+            </div>
+
+        </div>
+    </nav>
+    <!-- Main Content Canvas -->
+    <main id="home" class="relative w-full min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-16">
+        <!-- Center Wrapper (Flex for Layout) -->
+        <div
+            class="relative w-full max-w-6xl flex flex-col md:flex-row items-center justify-center gap-12 md:gap-20 px-8">
+
+            <!-- Left Side: Polaroid Photo (Assets 24) -->
+            <div class="relative z-30 animate-heboh">
+                <div class="polaroid-frame w-56 h-72 md:w-72 md:h-[360px] flex flex-col">
+                    <img src="assets/24.jpg" alt="Laras Praba"
+                        class="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-500 shadow-inner" />
+                    <div class="mt-4 flex justify-center">
+                        <span class="font-[Caveat,cursive] text-xl text-stone-600">@larasprabaa</span>
+                    </div>
+                </div>
+                <!-- Mini Sticker on Polaroid -->
+                <div class="absolute -top-4 -right-4 w-16 h-16 z-40 animate-bounce">
+                    <img src="assets/6.png" class="w-full h-full object-contain" />
+                </div>
+            </div>
+
+            <!-- Right Side: Header Text Section -->
+            <div class="text-center md:text-left relative z-20">
+                <h1 class="font-display-lg text-4xl md:text-5xl text-stone-800 italic mb-1">WelcOme!</h1>
+                <div class="relative inline-block mt-1">
+                    <span class="absolute inset-0 bg-[#FFF500] -rotate-1 scale-110 z-0 opacity-80"></span>
+                    <h2
+                        class="relative z-10 font-display-lg text-5xl md:text-6xl font-bold tracking-tight text-stone-900 leading-tight">
+                        Laras Praba</h2>
+                </div>
+                <p
+                    class="mt-6 font-label-caps text-[11px] md:text-label-caps text-secondary uppercase tracking-[0.3em] max-w-xs">
+                    Content
+                    Creator | Digital Marketing Enthusiast</p>
+            </div>
+
+            <!-- Decor Elements (Repositioned to frame the scene) -->
+            <div class="absolute w-36 h-36 z-10" style="top: 2%; left: 2%;">
+                <div style="animation: popIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; opacity: 0;">
+                    <img src="assets/2.png"
+                        class="w-full h-full object-contain drop-shadow-2xl hover:scale-110 transition-transform opacity-60 md:opacity-100"
+                        style="animation: float1 4s ease-in-out infinite 0.8s;" alt="Decor" />
+                </div>
+            </div>
+
+            <div class="absolute w-44 h-44 z-30" style="top: -5%; right: 5%;">
+                <div style="animation: popIn 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; opacity: 0;">
+                    <img src="assets/3.png"
+                        class="w-full h-full object-contain drop-shadow-2xl hover:scale-110 transition-transform opacity-60 md:opacity-100"
+                        style="animation: float2 5s ease-in-out infinite 0.9s;" alt="Decor" />
+                </div>
+            </div>
+
+            <div class="absolute w-32 h-32 z-30" style="bottom: 2%; left: 2%;">
+                <div style="animation: popIn 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; opacity: 0;">
+                    <img src="assets/4.png"
+                        class="w-full h-full object-contain drop-shadow-2xl hover:scale-110 transition-transform opacity-60 md:opacity-100"
+                        style="animation: float3 4.5s ease-in-out infinite 1s;" alt="Decor" />
+                </div>
+            </div>
+
+            <div class="absolute w-40 h-40 z-10" style="bottom: -8%; right: -2%;">
+                <div style="animation: popIn 0.85s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; opacity: 0;">
+                    <img src="assets/5.png"
+                        class="w-full h-full object-contain drop-shadow-2xl hover:scale-110 transition-transform opacity-60 md:opacity-100"
+                        style="animation: float1 5.5s ease-in-out infinite 0.85s;" alt="Decor" />
+                </div>
+            </div>
+
+            <div class="absolute w-28 h-28 z-10" style="top: 45%; left: -8%;">
+                <div style="animation: popIn 1.1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; opacity: 0;">
+                    <img src="assets/6.png"
+                        class="w-full h-full object-contain drop-shadow-2xl hover:scale-110 transition-transform opacity-40 md:opacity-100"
+                        style="animation: float2 4.2s ease-in-out infinite 1.1s;" alt="Decor" />
+                </div>
+            </div>
+
+            <div class="absolute w-36 h-36 z-10" style="top: 75%; right: -6%;">
+                <div style="animation: popIn 0.95s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; opacity: 0;">
+                    <img src="assets/7.png"
+                        class="w-full h-full object-contain drop-shadow-2xl hover:scale-110 transition-transform opacity-60 md:opacity-100"
+                        style="animation: float3 5.2s ease-in-out infinite 0.95s;" alt="Decor" />
+                </div>
+            </div>
+
+            <div class="absolute w-44 h-44 z-30" style="top: -12%; left: 42%;">
+                <div style="animation: popIn 1.05s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; opacity: 0;">
+                    <img src="assets/9.png"
+                        class="w-full h-full object-contain drop-shadow-2xl hover:scale-110 transition-transform -rotate-6"
+                        style="animation: float1 4.8s ease-in-out infinite 1.05s;" alt="Decor" />
+                </div>
+            </div>
+
+            <div class="absolute w-36 h-36 z-10" style="bottom: -10%; left: 46%;">
+                <div style="animation: popIn 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; opacity: 0;">
+                    <img src="assets/13.png"
+                        class="w-full h-full object-contain drop-shadow-2xl hover:scale-110 transition-transform"
+                        style="animation: float2 4.1s ease-in-out infinite 0.9s;" alt="Decor" />
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Down Indicator Decor -->
+        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center opacity-50 animate-pulse">
+            <span class="font-serif italic text-sm mb-2">Scroll</span>
+            <span class="material-symbols-outlined">straight</span>
+        </div>
+    </main>
+    <!-- NEW Journey Section -->
+    <section id="journey" class="relative bg-[#000000] text-stone-100 pt-16 pb-12 overflow-hidden reveal">
+        <!-- Seamless Transition Wave (Dark) -->
+        <div class="absolute top-0 left-0 w-full h-32 bg-background"
+            style="clip-path: polygon(0 0, 100% 0, 100% 30%, 0 100%);"></div>
+        <div class="max-w-[1240px] mx-auto px-8 md:px-16 relative z-10">
+            <div class="mb-10 pt-10 flex flex-col items-center">
+                <span class="font-serif italic text-stone-400 text-lg mb-2">The Evolution of a Creative</span>
+                <h2 class="font-display-lg text-4xl md:text-5xl italic text-white relative">
+                    Journey
+                    <span
+                        class="absolute -right-10 -top-2 w-10 h-10 bg-stone-800 y2k-sparkle opacity-50 animate-pulse"></span>
+                </h2>
+            </div>
+            <!-- Grid Journey Timeline -->
+            <div class="w-full max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 mt-8 mb-4">
+                <!-- Item 1: 2024 -->
+                <div
+                    class="bg-transparent py-8 px-6 md:py-10 md:px-10 flex flex-col items-center text-center group transition-colors duration-700 hover:bg-white/[0.02] relative border-b border-stone-800/40 md:border-r journey-reveal">
+                    <!-- Glow and Image -->
+                    <div class="w-16 h-16 mb-6 relative flex justify-center items-center">
+                        <div
+                            class="absolute inset-0 bg-[#FF007F]/30 rounded-full blur-[20px] group-hover:bg-[#FF007F]/50 transition-colors duration-500 scale-90">
+                        </div>
+                        <div style="animation: popIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; opacity: 0;"
+                            class="w-full h-full">
+                            <img src="assets/15.png"
+                                class="w-full h-full object-contain relative z-10 hover:scale-110 transition-transform"
+                                style="animation: float1 4s ease-in-out infinite 0.8s;" alt="2024 Phase" />
+                        </div>
+                    </div>
+
+                    <h3
+                        class="font-serif text-[24px] md:text-[28px] text-white leading-tight mb-3 tracking-tight font-light transition-colors group-hover:text-stone-200">
+                        Started Creating</h3>
+                    <p
+                        class="text-stone-400 font-sans text-[13px] leading-relaxed max-w-xs group-hover:text-stone-300 transition-colors">
+                        Began exploring content creation and developed a strong interest in digital storytelling and
+                        visual content.</p>
+                    <span
+                        class="font-sans text-[9px] font-bold tracking-[0.2em] text-stone-600 uppercase mt-5 block">2024</span>
+                </div>
+
+                <!-- Item 2: 2025 -->
+                <div class="bg-transparent py-8 px-6 md:py-10 md:px-10 flex flex-col items-center text-center group transition-colors duration-700 hover:bg-white/[0.02] relative border-b border-stone-800/40 journey-reveal"
+                    style="transition-delay: 400ms;">
+                    <div class="w-16 h-16 mb-6 relative flex justify-center items-center">
+                        <div
+                            class="absolute inset-0 bg-amber-400/30 rounded-full blur-[20px] group-hover:bg-amber-400/50 transition-colors duration-500 scale-90">
+                        </div>
+                        <div style="animation: popIn 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; opacity: 0;"
+                            class="w-full h-full">
+                            <img src="assets/16.png"
+                                class="w-full h-full object-contain relative z-10 hover:scale-110 transition-transform"
+                                style="animation: float2 5s ease-in-out infinite 0.9s;" alt="2025 Phase" />
+                        </div>
+                    </div>
+
+                    <h3
+                        class="font-serif text-[24px] md:text-[28px] text-white leading-tight mb-3 tracking-tight font-light transition-colors group-hover:text-stone-200">
+                        Built Experience</h3>
+                    <p
+                        class="text-stone-400 font-sans text-[13px] leading-relaxed max-w-xs group-hover:text-stone-300 transition-colors">
+                        Joined Pelajar Penggerak Merah Putih, actively contributing to content creation and creative
+                        projects.</p>
+                    <span
+                        class="font-sans text-[9px] font-bold tracking-[0.2em] text-stone-600 uppercase mt-5 block">2025</span>
+                </div>
+
+                <!-- Item 3: 2026 -->
+                <div class="bg-transparent py-8 px-6 md:py-10 md:px-10 flex flex-col items-center text-center group transition-colors duration-700 hover:bg-white/[0.02] relative border-b md:border-b-0 border-stone-800/40 md:border-r journey-reveal"
+                    style="transition-delay: 800ms;">
+                    <div class="w-16 h-16 mb-6 relative flex justify-center items-center">
+                        <div
+                            class="absolute inset-0 bg-blue-500/30 rounded-full blur-[20px] group-hover:bg-blue-500/50 transition-colors duration-500 scale-90">
+                        </div>
+                        <div style="animation: popIn 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; opacity: 0;"
+                            class="w-full h-full">
+                            <img src="assets/7.png"
+                                class="w-full h-full object-contain relative z-10 hover:scale-110 transition-transform"
+                                style="animation: float3 4.5s ease-in-out infinite 1s;" alt="2026 Phase" />
+                        </div>
+                    </div>
+
+                    <h3
+                        class="font-serif text-[24px] md:text-[28px] text-white leading-tight mb-3 tracking-tight font-light transition-colors group-hover:text-stone-200">
+                        Growing Professionally</h3>
+                    <p
+                        class="text-stone-400 font-sans text-[13px] leading-relaxed max-w-xs group-hover:text-stone-300 transition-colors">
+                        Became part of a Marketing Crew and worked as a Content Creator Intern at Digimarly, managing
+                        several social media accounts.</p>
+                    <span
+                        class="font-sans text-[9px] font-bold tracking-[0.2em] text-stone-600 uppercase mt-5 block">2026</span>
+                </div>
+
+                <!-- Item 4: NOW -->
+                <div class="bg-transparent py-8 px-6 md:py-10 md:px-10 flex flex-col items-center text-center group transition-colors duration-700 hover:bg-white/[0.02] relative journey-reveal"
+                    style="transition-delay: 1200ms;">
+                    <div class="w-16 h-16 mb-6 relative flex justify-center items-center">
+                        <div
+                            class="absolute inset-0 bg-stone-300/30 rounded-full blur-[20px] group-hover:bg-stone-300/50 transition-colors duration-500 scale-90">
+                        </div>
+                        <div style="animation: popIn 0.85s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; opacity: 0;"
+                            class="w-full h-full">
+                            <img src="assets/3.png"
+                                class="w-full h-full object-contain relative z-10 hover:scale-110 transition-transform"
+                                style="animation: float1 5.5s ease-in-out infinite 0.85s;" alt="Now Phase" />
+                        </div>
+                    </div>
+
+                    <h3
+                        class="font-serif text-[24px] md:text-[28px] text-white leading-tight mb-3 tracking-tight font-light transition-colors group-hover:text-stone-200">
+                        Continuously Evolving</h3>
+                    <p
+                        class="text-stone-400 font-sans text-[13px] leading-relaxed max-w-xs group-hover:text-stone-300 transition-colors">
+                        Focused on creating meaningful, audience-driven content while refining both creative and
+                        strategic skills.</p>
+                    <span
+                        class="font-sans text-[9px] font-bold tracking-[0.2em] text-[#FF007F] uppercase mt-5 block animate-pulse">NOW</span>
+                </div>
+
+            </div>
+        </div>
+        <!-- Bottom Section Transition (Dark to Light) -->
+        <div class="absolute bottom-0 left-0 w-full h-32 bg-[#f4f4f5]"
+            style="clip-path: polygon(0 100%, 100% 0, 100% 100%, 0 100%);"></div>
+    </section>
+
+    <!-- OS Desktop Portfolio Style Section -->
+    <section id="project"
+        class="relative bg-[#f4f4f5] text-stone-900 font-sans flex flex-col items-center pb-20 w-full reveal">
+        <!-- OS Top Bar -->
+        <div
+            class="w-full border-b border-stone-200 px-6 py-3 flex justify-between items-center relative max-w-[1440px] mx-auto z-20">
+            <!-- Left Side: Dots & Title -->
+            <div class="flex items-center gap-6">
+                <!-- Dots -->
+                <div class="flex gap-2">
+                    <div class="w-2.5 h-2.5 rounded-full bg-[#FF5F56] border border-[#E0443E]"></div>
+                    <div class="w-2.5 h-2.5 rounded-full bg-[#FFBD2E] border-[#DEA123]"></div>
+                    <div class="w-2.5 h-2.5 rounded-full bg-[#27C93F] border-[#1AAB29]"></div>
+                </div>
+                <!-- Title Group -->
+                <div class="flex flex-col">
+                    <h3 class="font-bold text-[13px] md:text-[15px] leading-tight tracking-tight text-stone-800">
+                        about_me.new_file</h3>
+                    <p class="text-stone-400 text-[10px] md:text-[11px] uppercase tracking-wider">spring 2024</p>
+                </div>
+            </div>
+            <!-- Right Icons -->
+            <div class="flex gap-4 text-stone-400">
+                <span
+                    class="material-symbols-outlined cursor-pointer hover:text-stone-600 text-lg font-medium">zoom_in</span>
+                <span
+                    class="material-symbols-outlined cursor-pointer hover:text-stone-600 text-lg font-medium">zoom_out</span>
+                <span
+                    class="material-symbols-outlined cursor-pointer hover:text-stone-600 text-lg font-medium">share</span>
+                <span
+                    class="material-symbols-outlined cursor-pointer hover:text-stone-600 text-lg font-medium">refresh</span>
+            </div>
+        </div>
+
+        <!-- Desktop Area -->
+        <div class="relative w-full max-w-[1200px] min-h-[600px] mt-4">
+
+            <!-- Central ID Card Link (Replaced with 27.png) -->
+            <div
+                class="absolute top-[42%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10 md:top-[42%] lg:top-[42%] group cursor-pointer w-[300px] md:w-[350px]">
+
+                <a href="#about" class="block w-full h-full relative" title="View Biodata">
+                    <div style="animation: float1 6s ease-in-out infinite;">
+                        <img src="assets/27.png"
+                            class="w-full h-auto object-contain drop-shadow-[0_15px_35px_rgba(0,0,0,0.15)] transition-transform duration-500 group-hover:scale-[1.03] group-hover:-rotate-1"
+                            alt="About Me Biodata" />
+                    </div>
+                </a>
+
+                <!-- Floating interaction hint -->
+                <div
+                    class="absolute -right-32 top-[10%] animate-pulse duration-1000 pointer-events-none opacity-80 flex gap-2 items-center hidden lg:flex z-30">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                        class="stroke-[#FF007F] w-8 h-8 rotate-[160deg]">
+                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <span
+                        class="font-[Caveat,cursive] text-xl text-[#FF007F] rotate-[10deg] whitespace-nowrap mt-4 block"></span>
+                </div>
+            </div>
+
+            <!-- The folders (Desktop) -->
+            <!-- 1: Top Left Pink -->
+            <div class="flex flex-col items-center absolute top-[6%] left-[28%] group w-32 cursor-pointer z-0 hidden md:flex reveal"
+                onclick="openModal()" style="transition-delay: 100ms;">
+                <div style="animation: float2 5s ease-in-out infinite 0.2s;">
+                    <img src="assets/1.png" alt="Social Media Handle"
+                        class="w-32 h-32 drop-shadow-[0_4px_12px_rgba(0,0,0,0.1)] object-contain transition-transform group-hover:scale-110" />
+                </div>
+                <span class="mt-3 text-stone-800 font-medium text-[15px] tracking-tight text-center leading-snug">Social
+                    Media<br />Handle</span>
+            </div>
+
+            <!-- 2: Top Right Yellow -->
+            <div class="flex flex-col items-center absolute top-[10%] right-[22%] group w-32 cursor-pointer z-0 hidden md:flex reveal"
+                style="transition-delay: 200ms;">
+                <div style="animation: float3 4.5s ease-in-out infinite 0.7s;">
+                    <img src="assets/20.png" alt="Campaign & Project"
+                        class="w-32 h-32 drop-shadow-[0_4px_12px_rgba(0,0,0,0.1)] object-contain transition-transform group-hover:scale-110" />
+                </div>
+                <span
+                    class="mt-3 text-stone-800 font-medium text-[15px] tracking-tight text-center leading-snug">Campaign<br />&amp;
+                    Project</span>
+            </div>
+
+            <!-- 3: Mid Left Blue -->
+            <div class="flex flex-col items-center absolute top-[40%] left-[18%] group w-32 cursor-pointer z-0 hidden md:flex reveal"
+                onclick="openContentModal()" style="transition-delay: 300ms;">
+                <div style="animation: float1 5.5s ease-in-out infinite 1.2s;">
+                    <img src="assets/18.png" alt="Social Media Content"
+                        class="w-32 h-32 drop-shadow-[0_4px_12px_rgba(0,0,0,0.1)] object-contain transition-transform group-hover:scale-110" />
+                </div>
+                <span class="mt-3 text-stone-800 font-medium text-[15px] tracking-tight text-center leading-snug">Social
+                    Media<br />Content</span>
+            </div>
+
+            <!-- 4: Mid Right Pink -->
+            <div class="flex flex-col items-center absolute top-[45%] right-[18%] group w-32 cursor-pointer z-0 hidden md:flex reveal"
+                onclick="openVisualModal()" style="transition-delay: 400ms;">
+                <div style="animation: float2 4s ease-in-out infinite 0.5s;">
+                    <img src="assets/19.png" alt="Visual Design Content"
+                        class="w-32 h-32 drop-shadow-[0_4px_12px_rgba(0,0,0,0.1)] object-contain transition-transform group-hover:scale-110" />
+                </div>
+                <span class="mt-3 text-stone-800 font-medium text-[15px] tracking-tight text-center leading-snug">Visual
+                    Design<br />Content</span>
+            </div>
+
+            <!-- 5: Bottom Left Yellow -->
+            <div class="flex flex-col items-center absolute bottom-[5%] left-[32%] group w-32 cursor-pointer z-0 hidden md:flex reveal"
+                onclick="openCreativeStyleModal()" style="transition-delay: 500ms;">
+                <div style="animation: float3 6s ease-in-out infinite 1.5s;">
+                    <img src="assets/17.png" alt="Creative Style"
+                        class="w-32 h-32 drop-shadow-[0_4px_12px_rgba(0,0,0,0.1)] object-contain transition-transform group-hover:scale-110" />
+                </div>
+                <span
+                    class="mt-3 text-stone-800 font-medium text-[15px] tracking-tight text-center leading-snug">Creative<br />Style</span>
+            </div>
+
+            <!-- Mobile Layout for Folders (Grid) -->
+            <div
+                class="md:hidden flex flex-wrap justify-center gap-x-4 gap-y-8 mt-[120px] pb-12 w-full px-4 relative z-20">
+                <div class="flex flex-col items-center w-[40%] group cursor-pointer active:scale-95 transition-transform"
+                    onclick="openModal()">
+                    <img src="assets/1.png" alt="Social Media Handle"
+                        class="w-24 h-24 drop-shadow-[0_4px_12px_rgba(0,0,0,0.1)] object-contain" />
+                    <span
+                        class="mt-2 text-stone-800 font-medium text-[13px] tracking-tight text-center leading-snug">Social
+                        Media<br />Handle</span>
+                </div>
+
+                <div
+                    class="flex flex-col items-center w-[40%] group cursor-pointer active:scale-95 transition-transform">
+                    <img src="assets/17.png" alt="Campaign & Project"
+                        class="w-24 h-24 drop-shadow-[0_4px_12px_rgba(0,0,0,0.1)] object-contain" />
+                    <span
+                        class="mt-2 text-stone-800 font-medium text-[13px] tracking-tight text-center leading-snug">Campaign<br />&amp;
+                        Project</span>
+                </div>
+
+                <div class="flex flex-col items-center w-[40%] group cursor-pointer active:scale-95 transition-transform"
+                    onclick="openContentModal()">
+                    <img src="assets/18.png" alt="Social Media Content"
+                        class="w-24 h-24 drop-shadow-[0_4px_12px_rgba(0,0,0,0.1)] object-contain" />
+                    <span
+                        class="mt-2 text-stone-800 font-medium text-[13px] tracking-tight text-center leading-snug">Social
+                        Media<br />Content</span>
+                </div>
+
+                <div class="flex flex-col items-center w-[40%] group cursor-pointer active:scale-95 transition-transform"
+                    onclick="openVisualModal()">
+                    <img src="assets/19.png" alt="Visual Design Content"
+                        class="w-24 h-24 drop-shadow-[0_4px_12px_rgba(0,0,0,0.1)] object-contain" />
+                    <span
+                        class="mt-2 text-stone-800 font-medium text-[13px] tracking-tight text-center leading-snug">Visual
+                        Design<br />Content</span>
+                </div>
+
+                <div
+                    class="flex flex-col items-center w-[40%] group cursor-pointer active:scale-95 transition-transform">
+                    <img src="assets/20.png" alt="Creative Style"
+                        class="w-24 h-24 drop-shadow-[0_4px_12px_rgba(0,0,0,0.1)] object-contain" />
+                    <span
+                        class="mt-2 text-stone-800 font-medium text-[13px] tracking-tight text-center leading-snug">Creative<br />Style</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- Closing Section (Thank You) -->
+    <section id="contact" class="relative w-full overflow-hidden mt-0 bg-[#000000]">
+        <!-- Top Half (Matches Background with curve) -->
+        <div
+            class="relative w-full bg-[#f9f9f9] pb-64 md:pb-80 rounded-b-[60px] md:rounded-b-[120px] shadow-sm z-10 reveal">
+            <div class="max-w-[1440px] mx-auto px-8 pt-16 md:pt-24 flex flex-col items-center">
+                <!-- Header Labels -->
+                <div
+                    class="w-full flex justify-between items-center mb-16 md:mb-24 opacity-80 px-4 md:px-12 font-medium text-stone-700 tracking-tight text-[12px] md:text-[14px]">
+                    <span>(Creative)</span>
+                    <span>(2024-2025)</span>
+                    <span>(Design)</span>
+                </div>
+
+                <!-- Thank You Text -->
+                <div class="relative py-10">
+                    <!-- Spinning Decors around Thank You -->
+                    <div class="absolute -top-24 -left-32 w-20 h-20 md:w-28 md:h-28 animate-spin-slow opacity-60 z-0">
+                        <img src="assets/2.png" class="w-full h-full object-contain" />
+                    </div>
+                    <div class="absolute -top-20 -right-40 w-24 h-24 md:w-32 md:h-32 animate-spin-slow opacity-60 z-0"
+                        style="animation-direction: reverse; animation-duration: 15s;">
+                        <img src="assets/23.png" class="w-full h-full object-contain" />
+                    </div>
+                    <div class="absolute top-1/2 -left-48 -translate-y-1/2 w-16 h-16 md:w-24 md:h-24 animate-spin-slow opacity-50 z-0"
+                        style="animation-duration: 8s;">
+                        <img src="assets/10.png" class="w-full h-full object-contain" />
+                    </div>
+                    <div class="absolute top-1/2 -right-56 -translate-y-1/2 w-20 h-20 md:w-28 md:h-28 animate-spin-slow opacity-50 z-0"
+                        style="animation-duration: 10s;">
+                        <img src="assets/14.png" class="w-full h-full object-contain" />
+                    </div>
+                    <div class="absolute -bottom-16 -left-36 w-14 h-14 md:w-20 md:h-20 animate-spin-slow opacity-60 z-0"
+                        style="animation-direction: reverse; animation-duration: 14s;">
+                        <img src="assets/13.png" class="w-full h-full object-contain" />
+                    </div>
+                    <div class="absolute -bottom-20 -right-32 w-18 h-18 md:w-24 md:h-24 animate-spin-slow opacity-60 z-0"
+                        style="animation-duration: 18s;">
+                        <img src="assets/3.png" class="w-full h-full object-contain" />
+                    </div>
+
+                    <h2 class="text-[50px] md:text-[95px] leading-none mb-4 reveal delay-100 relative z-10"
+                        style="font-family: 'Playfair Display', serif; color: #111111; letter-spacing: -2px;">
+                        Thank <span class="italic">You</span>
+                    </h2>
+                </div>
+
+                <!-- Subtext Highlights -->
+                <div class="flex flex-col items-center gap-2 reveal delay-200">
+                    <div
+                        class="bg-[#FF007F] text-white px-4 md:px-8 py-1 md:py-1.5 text-[12px] md:text-[16px] font-bold tracking-tight transform rotate-[-0.5deg]">
+                        Looking Forward to
+                    </div>
+                    <div
+                        class="bg-[#111111] text-white px-4 md:px-8 py-1 md:py-1.5 text-[12px] md:text-[16px] font-bold tracking-tight transform rotate-[0.5deg] -mt-1">
+                        Connect with You!
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fastener Graphic Overlay (Bridging White and Black Sections) -->
+        <div class="absolute left-1/2 top-[76%] md:top-[45%] -translate-x-1/2 -translate-y-1/2 z-20 flex flex-col items-center gap-16 md:gap-14">
+            <!-- Top Circle -->
+            <div class="w-14 h-14 md:w-24 md:h-24 rounded-full bg-[#FF007F] shadow-[0_4px_15px_rgba(255,0,127,0.4)] flex items-center justify-center border-2 border-[#D6006B] relative overflow-hidden">
+                <div class="absolute inset-0 bg-stone-900/10 mix-blend-overlay"></div>
+                <div class="w-4 h-4 md:w-8 md:h-8 rounded-full bg-[#222222] border-4 border-[#888888] shadow-inner"></div>
+            </div>
+
+            <!-- String Pattern SVG -->
+            <div class="absolute inset-x-0 top-1/2 -translate-y-1/2 h-40 md:h-60 flex justify-center pointer-events-none opacity-80">
+                <svg width="100%" height="100%" viewBox="0 0 100 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50 30 L45 75 L55 75 L50 30" stroke="#FF007F" stroke-width="0.3" opacity="0.3" />
+                    <path d="M50 120 L45 75 L55 75 L50 120" stroke="#FF007F" stroke-width="0.3" opacity="0.3" />
+                    <path d="M50 30 Q55 75 50 120" stroke="#900048" stroke-width="1.2" />
+                    <path d="M50 30 Q45 75 50 120" stroke="#900048" stroke-width="1.2" />
+                    <path d="M50 30 L50 120" stroke="#900048" stroke-width="0.3" stroke-dasharray="2 2" />
+                </svg>
+            </div>
+
+            <!-- Bottom Circle -->
+            <div class="w-14 h-14 md:w-24 md:h-24 rounded-full bg-[#FF007F] shadow-[0_4px_15px_rgba(255,0,127,0.4)] flex items-center justify-center border-2 border-[#D6006B] relative overflow-hidden">
+                <div class="absolute inset-0 bg-stone-900/10 mix-blend-overlay"></div>
+                <div class="w-4 h-4 md:w-8 md:h-8 rounded-full bg-[#222222] border-4 border-[#888888] shadow-inner"></div>
+            </div>
+        </div>
+
+
+
+        <!-- Bottom Half (Black Content) -->
+        <div class="w-full bg-[#000000] pt-32 pb-24 md:pt-48 md:pb-32 px-8 reveal">
+            <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-end gap-16">
+                <!-- Left side Contacts -->
+                <div class="flex flex-col gap-6 text-white font-medium">
+                    <div class="flex flex-col gap-0.5">
+                        <span class="text-stone-500 text-[10px] md:text-[11px] uppercase tracking-[2px]">Phone</span>
+                        <a href="tel:+628570039978"
+                            class="text-base md:text-xl hover:text-[#FF007F] transition-colors">+62 857 0039 978</a>
+                    </div>
+                    <div class="flex flex-col gap-4 mt-2">
+                        <!-- Instagram -->
+                        <a href="https://instagram.com/larasprabaa/" target="_blank"
+                            class="flex items-center gap-3 text-stone-300 hover:text-white group transition-colors">
+                            <svg class="w-5 h-5 fill-current text-stone-500 group-hover:text-[#FF007F] transition-colors"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                            <span class="text-xs md:text-sm tracking-wide">@larasprabaa</span>
+                        </a>
+                        <!-- TikTok -->
+                        <a href="https://www.tiktok.com/@laraspraba" target="_blank"
+                            class="flex items-center gap-3 text-stone-300 hover:text-white group transition-colors">
+                            <svg class="w-5 h-5 fill-current text-stone-500 group-hover:text-[#FF007F] transition-colors"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.04-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.58-1.01V14.5c0 2.1-.59 4.1-1.89 5.6-1.3 1.5-3.2 2.4-5.2 2.4-2.1 0-4.1-.9-5.4-2.4-1.3-1.5-1.8-3.5-1.8-5.5 0-2.1.6-4.1 1.9-5.6 1.3-1.5 3.1-2.4 5.1-2.4.45 0 .91.04 1.35.12V10.8c-.46-.14-.94-.21-1.43-.21-1.12 0-2.19.49-2.88 1.32-.69.83-.98 1.91-.98 2.98 0 1.07.29 2.15.98 2.98.69.83 1.76 1.32 2.88 1.32 1.12 0 2.2-.49 2.89-1.32.69-.83.97-1.91.97-2.98V0z" />
+                            </svg>
+                            <span class="text-xs md:text-sm tracking-wide">@laraspraba</span>
+                        </a>
+                        <!-- LinkedIn -->
+                        <a href="https://linkedin.com/in/laraspraba/" target="_blank"
+                            class="flex items-center gap-3 text-stone-300 hover:text-white group transition-colors">
+                            <svg class="w-5 h-5 fill-current text-stone-500 group-hover:text-[#FF007F] transition-colors"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                            <span class="text-xs md:text-sm tracking-wide">@laraspraba</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right side Signature -->
+                <div class="flex flex-col items-end">
+                    <span class="text-white text-base md:text-lg mb-2 opacity-80"
+                        style="font-family: 'Playfair Display', serif;">Warm Regards,</span>
+                    <!-- Mimicking Signature with Font -->
+                    <div class="text-white text-[44px] md:text-[62px] leading-tight select-none pointer-events-none"
+                        style="font-family: 'Dancing Script', cursive; transform: rotate(-4deg); filter: drop-shadow(0 4px 12px rgba(255,255,255,0.1));">
+                        Laras <br /> <span class="ml-10">Praba</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Legal -->
+            <div
+                class="max-w-[1200px] mx-auto mt-24 pt-8 border-t border-white/10 flex justify-center text-[10px] text-stone-600 uppercase tracking-[4px]">
+                © 2024 LARAS PRABA - ALL RIGHTS RESERVED
+            </div>
+        </div>
+    </section>
+    <!-- FAB for Contextual Action -->
+    <div class="fixed bottom-8 right-16 z-50">
+        <button
+            class="bg-[#FF007F] text-white p-4 rounded-full shadow-lg hover:scale-95 transition-transform flex items-center gap-2">
+            <span class="material-symbols-outlined" data-weight="fill">chat_bubble</span>
+            <span class="font-label-caps">Inquire</span>
+        </button>
+    </div>
+
+    <!-- Scrapbook Binder Modal Overlay -->
+    <div id="binderModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-2 md:p-4">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-stone-900/60 backdrop-blur-md transition-opacity duration-300 opacity-0 cursor-pointer"
+            id="binderBackdrop" onclick="closeModal()"></div>
+
+        <!-- Modal Content (Binder Wrapper) -->
+        <div id="binderContent"
+            class="relative z-10 w-[95%] md:w-[85%] max-w-[1000px] aspect-[10/13] md:aspect-[4/3] max-h-[90vh] bg-[#1a1a1a] rounded-[16px] md:rounded-[20px] shadow-[0_30px_60px_rgba(0,0,0,0.6),inset_0_0_80px_rgba(0,0,0,0.8)] border-[1.5px] border-[#2a2a2a] overflow-visible transition-all duration-500 scale-95 opacity-0 flex items-stretch justify-center p-3 md:p-6"
+            style="background-image: url('data:image/svg+xml,%3Csvg width=\'200\' height=\'200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noise\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'2\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'200\' height=\'200\' filter=\'url(%23noise)\' opacity=\'0.06\'/%3E%3C/svg%3E');">
+
+            <!-- Left Side (Empty Cover / subtle stitching) -->
+            <div
+                class="hidden md:flex w-[40%] h-full relative border border-transparent items-center justify-center overflow-hidden">
+                <!-- Left Stitching -->
+                <div class="absolute top-2 bottom-2 left-2 border-l-2 border-dashed border-[#ffffff1a] z-10"></div>
+                <!-- Project 1 Mockup -->
+                <img id="mockupPage0" src="assets/30.png"
+                    class="absolute w-[85%] h-auto max-h-[85%] object-contain drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)] z-0 rounded-sm transition-opacity duration-[800ms] opacity-100"
+                    alt="Mockup Project 1" />
+                <!-- Project 2 Mockup (Large) -->
+                <img id="mockupPage1" src="assets/31.png"
+                    class="absolute w-[100%] h-auto max-h-[95%] object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.5)] z-0 rounded-sm transition-opacity duration-[800ms] opacity-0"
+                    alt="Mockup Project 2" />
+                <!-- Project 3 Mockup -->
+                <img id="mockupPage2" src="assets/32.png"
+                    class="absolute w-[95%] h-auto max-h-[90%] object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.5)] z-0 rounded-sm transition-opacity duration-[800ms] opacity-0"
+                    alt="Mockup Project 3" />
+            </div>
+
+            <!-- Center Spine Gradient/Shadow -->
+            <div
+                class="absolute left-0 md:left-[40%] top-0 bottom-0 w-[8px] md:w-[48px] bg-gradient-to-r from-[rgba(0,0,0,0.8)] via-[rgba(26,26,26,0.2)] to-[rgba(0,0,0,0.9)] z-20 shadow-[10px_0_20px_rgba(0,0,0,0.6)]">
+            </div>
+            <!-- Right Side Perspective Wrapper -->
+            <div class="w-full md:w-[60%] h-full relative z-10" style="perspective: 2500px;">
+
+                <!-- Metallic Binder Rings (Static Above All Pages) -->
+                <div
+                    class="absolute left-[-22px] md:left-[-35px] top-[15%] bottom-[15%] w-[45px] md:w-[70px] flex flex-col justify-between items-center z-50 py-4 md:py-8 pointer-events-none">
+                    <!-- Group 1 -->
+                    <div class="flex flex-col gap-2 md:gap-3 w-full">
+                        <div
+                            class="w-full h-2.5 md:h-[14px] bg-gradient-to-t from-[#4a4a4a] via-[#f8f8f8] to-[#4a4a4a] rounded-full shadow-[0_6px_8px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.8)] border border-[#6a6a6a]">
+                        </div>
+                        <div
+                            class="w-full h-2.5 md:h-[14px] bg-gradient-to-t from-[#4a4a4a] via-[#f8f8f8] to-[#4a4a4a] rounded-full shadow-[0_6px_8px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.8)] border border-[#6a6a6a]">
+                        </div>
+                        <div
+                            class="w-full h-2.5 md:h-[14px] bg-gradient-to-t from-[#4a4a4a] via-[#f8f8f8] to-[#4a4a4a] rounded-full shadow-[0_6px_8px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.8)] border border-[#6a6a6a]">
+                        </div>
+                    </div>
+                    <!-- Group 2 -->
+                    <div class="flex flex-col gap-2 md:gap-3 w-full">
+                        <div
+                            class="w-full h-2.5 md:h-[14px] bg-gradient-to-t from-[#4a4a4a] via-[#f8f8f8] to-[#4a4a4a] rounded-full shadow-[0_6px_8px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.8)] border border-[#6a6a6a]">
+                        </div>
+                        <div
+                            class="w-full h-2.5 md:h-[14px] bg-gradient-to-t from-[#4a4a4a] via-[#f8f8f8] to-[#4a4a4a] rounded-full shadow-[0_6px_8px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.8)] border border-[#6a6a6a]">
+                        </div>
+                        <div
+                            class="w-full h-2.5 md:h-[14px] bg-gradient-to-t from-[#4a4a4a] via-[#f8f8f8] to-[#4a4a4a] rounded-full shadow-[0_6px_8px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.8)] border border-[#6a6a6a]">
+                        </div>
+                    </div>
+                </div> <!-- PAGE 3 (Static Background) -->
+                <div
+                    class="absolute inset-0 w-full h-full bg-[#f4f3ed] rounded-r-[8px] rounded-l-[4px] md:rounded-l-[2px] shadow-[inset_-10px_0_20px_rgba(0,0,0,0.03)] flex z-10 opacity-100">
+                    <!-- Holes -->
+                    <div
+                        class="absolute left-2 md:left-4 top-[15%] bottom-[15%] flex flex-col justify-between py-4 md:py-8 z-20">
+                        <div class="flex flex-col gap-[10px] md:gap-[13px]">
+                            <div
+                                class="w-3 h-3 md:w-4 md:h-4 rounded-full bg-[#0a0a0a] shadow-[inset_2px_4px_6px_rgba(0,0,0,0.8)]">
+                            </div>
+                            <div
+                                class="w-3 h-3 md:w-4 md:h-4 rounded-full bg-[#0a0a0a] shadow-[inset_2px_4px_6px_rgba(0,0,0,0.8)]">
+                            </div>
+                            <div
+                                class="w-3 h-3 md:w-4 md:h-4 rounded-full bg-[#0a0a0a] shadow-[inset_2px_4px_6px_rgba(0,0,0,0.8)]">
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-[10px] md:gap-[13px]">
+                            <div
+                                class="w-3 h-3 md:w-4 md:h-4 rounded-full bg-[#0a0a0a] shadow-[inset_2px_4px_6px_rgba(0,0,0,0.8)]">
+                            </div>
+                            <div
+                                class="w-3 h-3 md:w-4 md:h-4 rounded-full bg-[#0a0a0a] shadow-[inset_2px_4px_6px_rgba(0,0,0,0.8)]">
+                            </div>
+                            <div
+                                class="w-3 h-3 md:w-4 md:h-4 rounded-full bg-[#0a0a0a] shadow-[inset_2px_4px_6px_rgba(0,0,0,0.8)]">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Page 3 Content -->
+                    <div
+                        class="flex-1 ml-10 md:ml-16 mr-4 md:mr-[72px] my-6 md:my-10 flex flex-col relative drop-shadow-sm overflow-y-auto no-scrollbar">
+                        <div class="absolute inset-0 border-[0.5px] border-stone-800 pointer-events-none opacity-40">
+                        </div>
+
+                        <!-- Header -->
+                        <div
+                            class="p-4 md:p-6 border-b-[0.5px] border-stone-800 flex justify-between items-center bg-[#f4f3ed]">
+                            <h2
+                                class="font-serif text-2xl md:text-[32px] md:leading-tight font-medium tracking-tight text-stone-900">
+                                Social Media Handle</h2>
+                            <button onclick="turnPage(1)"
+                                class="text-[10px] md:text-[11px] font-bold tracking-widest text-[#FF007F] hover:text-[#e00070] uppercase flex items-center gap-1 transition-colors"><span
+                                    class="material-symbols-outlined text-sm">west</span> BACK</button>
+                        </div>
+
+                        <!-- Description -->
+                        <div
+                            class="p-4 md:p-6 border-b-[0.5px] border-stone-800 flex flex-col md:flex-row gap-2 md:gap-4">
+                            <div
+                                class="w-full md:w-32 shrink-0 font-sans text-[9px] md:text-[10px] font-bold tracking-widest text-[#444] uppercase">
+                                DESCRIPTION:</div>
+                            <div
+                                class="font-sans text-[12px] md:text-[13.5px] text-stone-700 leading-relaxed max-w-full md:max-w-[400px]">
+                                Instagram : @noahcalledus</div>
+                        </div>
+
+                        <!-- Role & Focus -->
+                        <div class="flex-1 p-4 md:p-6 border-b-[0.5px] border-stone-800 flex flex-col gap-4 md:gap-6">
+                            <div class="flex flex-col md:flex-row gap-2 md:gap-4">
+                                <div
+                                    class="w-full md:w-32 shrink-0 font-sans text-[9px] md:text-[10px] font-bold tracking-widest text-[#444] uppercase">
+                                    ROLE:</div>
+                                <div
+                                    class="font-sans text-[12px] md:text-[13.5px] text-stone-800 leading-relaxed font-normal">
+                                    Content Creator @ Graphic Designer</div>
+                            </div>
+                            <div class="flex flex-col md:flex-row gap-2 md:gap-4">
+                                <div
+                                    class="w-full md:w-32 shrink-0 font-sans text-[9px] md:text-[10px] font-bold tracking-widest text-[#444] uppercase">
+                                    FOCUS:</div>
+                                <div
+                                    class="font-sans text-[12px] md:text-[13.5px] text-stone-800 leading-relaxed font-normal">
+                                    Feed Design, Visual Branding, and Product-Focused Content</div>
+                            </div>
+                        </div>
+
+                        <!-- Impact -->
+                        <div
+                            class="p-4 md:p-6 border-b-[0.5px] border-stone-800 flex flex-col md:flex-row gap-2 md:gap-4">
+                            <div
+                                class="w-full md:w-32 shrink-0 font-sans text-[9px] md:text-[10px] font-bold tracking-widest text-[#444] uppercase">
+                                IMPACT:</div>
+                            <div
+                                class="font-sans text-[12px] md:text-[13.5px] text-stone-800 leading-relaxed font-normal">
+                                Created visually cohesive content to strengthen brand identity and prepare for
+                                product-based engagement</div>
+                        </div>
+
+                        <!-- Revisions & Duration -->
+                        <div
+                            class="flex flex-row border-b-[0.5px] border-stone-800 font-sans text-[9px] md:text-[10px] font-bold tracking-widest text-[#444] uppercase items-stretch">
+                            <div
+                                class="flex-1 p-4 md:p-6 border-r-[0.5px] border-stone-800 flex items-center md:items-start gap-2 md:gap-4 flex-wrap">
+                                <span>REVISIONS:</span>
+                                <span
+                                    class="font-[Caveat,cursive] text-[20px] md:text-[24px] lowercase tracking-normal text-stone-800 font-normal mt-[-2px] md:mt-[-5px]">1
+                                    round</span>
+                            </div>
+                            <div class="flex-1 p-4 md:p-6 flex items-center md:items-start gap-2 md:gap-4 flex-wrap">
+                                <span>DURATION:</span>
+                                <span
+                                    class="font-[Caveat,cursive] text-[20px] md:text-[24px] lowercase tracking-normal text-stone-800 font-normal mt-[-2px] md:mt-[-5px]">tbd</span>
+                            </div>
+                        </div>
+
+                        <!-- Footer Text -->
+                        <div class="p-4 text-center mt-2 opacity-60">
+                            <span
+                                class="font-sans text-[10px] md:text-[11px] font-bold tracking-[0.25em] text-stone-800 uppercase">laras-space.com</span>
+                        </div>
+                    </div>
+
+                    <!-- Tabs (Stays on bottom layer) -->
+                    <div class="absolute right-[-40px] md:right-[-52px] top-[35%] flex flex-col gap-[3px] z-0">
+                        <div
+                            class="w-10 md:w-14 h-[100px] md:h-[130px] bg-[#f4f3ed] shadow-[4px_0_8px_rgba(0,0,0,0.4)] rounded-r-[6px] md:rounded-r-[8px] rounded-l-none relative flex justify-center items-center cursor-pointer border border-[#d2d1cb] border-l-0">
+                            <span
+                                class="transform rotate-90 whitespace-nowrap font-sans font-bold text-[9px] md:text-[11px] tracking-[0.1em] text-stone-800 uppercase">SOCIAL
+                                MEDIA</span>
+                        </div>
+                        <div
+                            class="w-9 md:w-12 h-[80px] md:h-[110px] bg-[#e3e2db] shadow-[3px_0_6px_rgba(0,0,0,0.3)] rounded-r-[6px] md:rounded-r-[8px] rounded-l-none relative flex justify-center items-center cursor-pointer border border-[#cdccc6] border-l-0 opacity-80 hover:opacity-100 transition-opacity mt-[-8px]">
+                            <span
+                                class="transform rotate-90 whitespace-nowrap font-sans font-bold text-[8px] md:text-[10px] tracking-[0.1em] text-stone-600 uppercase">EXTRA</span>
+                        </div>
+                    </div>
+
+                    <!-- Close Button Outline -->
+                    <button onclick="closeModal()" title="Close"
+                        class="absolute top-4 right-4 md:top-6 md:right-6 w-8 h-8 rounded-full bg-stone-200/50 hover:bg-stone-200 text-stone-600 flex items-center justify-center transition-colors z-50">
+                        <span class="material-symbols-outlined text-lg">close</span>
+                    </button>
+                </div>
+
+                <!-- PAGE 2 (Flipper) -->
+                <div id="flipperPage1"
+                    class="absolute inset-0 w-full h-full z-20 transition-transform duration-[1200ms] ease-[cubic-bezier(0.2,0.8,0.2,1)]"
+                    style="transform-style: preserve-3d; transform-origin: left center;">
+                    <!-- FRONT FACE of PAGE 2 -->
+                    <div class="absolute inset-0 w-full h-full bg-[#f4f3ed] rounded-r-[8px] rounded-l-[4px] md:rounded-l-[2px] shadow-[0_0_30px_rgba(0,0,0,0.6),inset_-10px_0_20px_rgba(0,0,0,0.03)] flex"
+                        style="backface-visibility: hidden;">
+                        <!-- Holes -->
+                        <div
+                            class="absolute left-2 md:left-4 top-[15%] bottom-[15%] flex flex-col justify-between py-4 md:py-8 z-20">
+                            <div class="flex flex-col gap-[10px] md:gap-[13px]">
+                                <div
+                                    class="w-3 h-3 md:w-4 md:h-4 rounded-full bg-[#0a0a0a] shadow-[inset_2px_4px_6px_rgba(0,0,0,0.8)]">
+                                </div>
+                                <div
+                                    class="w-3 h-3 md:w-4 md:h-4 rounded-full bg-[#0a0a0a] shadow-[inset_2px_4px_6px_rgba(0,0,0,0.8)]">
+                                </div>
+                                <div
+                                    class="w-3 h-3 md:w-4 md:h-4 rounded-full bg-[#0a0a0a] shadow-[inset_2px_4px_6px_rgba(0,0,0,0.8)]">
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-[10px] md:gap-[13px]">
+                                <div
+                                    class="w-3 h-3 md:w-4 md:h-4 rounded-full bg-[#0a0a0a] shadow-[inset_2px_4px_6px_rgba(0,0,0,0.8)]">
+                                </div>
+                                <div
+                                    class="w-3 h-3 md:w-4 md:h-4 rounded-full bg-[#0a0a0a] shadow-[inset_2px_4px_6px_rgba(0,0,0,0.8)]">
+                                </div>
+                                <div
+                                    class="w-3 h-3 md:w-4 md:h-4 rounded-full bg-[#0a0a0a] shadow-[inset_2px_4px_6px_rgba(0,0,0,0.8)]">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Page 2 Content Layout -->
+                        <div
+                            class="flex-1 ml-10 md:ml-16 mr-4 md:mr-[72px] my-6 md:my-10 flex flex-col relative drop-shadow-sm overflow-y-auto no-scrollbar">
+                            <div
+                                class="absolute inset-0 border-[0.5px] border-stone-800 pointer-events-none opacity-40">
+                            </div>
+
+                            <!-- Header with BACK and NEXT -->
+                            <div
+                                class="p-4 md:p-6 border-b-[0.5px] border-stone-800 flex justify-between items-center bg-[#f4f3ed]">
+                                <h2
+                                    class="font-serif text-2xl md:text-[32px] md:leading-tight font-medium tracking-tight text-stone-900">
+                                    Social Media Handle</h2>
+                                <div class="flex flex-col md:flex-row gap-2 items-end md:items-center">
+                                    <button onclick="turnPage(0)"
+                                        class="text-[9px] md:text-[10px] font-bold tracking-widest text-[#FF007F] hover:text-[#e00070] uppercase flex items-center gap-1 transition-colors"><span
+                                            class="material-symbols-outlined text-[12px] md:text-sm">west</span>
+                                        BACK</button>
+                                    <button onclick="turnPage(2)"
+                                        class="text-[9px] md:text-[10px] font-bold tracking-widest text-[#FF007F] hover:text-[#e00070] uppercase flex items-center gap-1 transition-colors">NEXT
+                                        <span
+                                            class="material-symbols-outlined text-[12px] md:text-sm">east</span></button>
+                                </div>
+                            </div>
+
+                            <!-- Description -->
+                            <div
+                                class="p-4 md:p-6 border-b-[0.5px] border-stone-800 flex flex-col md:flex-row gap-2 md:gap-4">
+                                <div
+                                    class="w-full md:w-32 shrink-0 font-sans text-[9px] md:text-[10px] font-bold tracking-widest text-[#444] uppercase">
+                                    DESCRIPTION:</div>
+                                <div
+                                    class="font-sans text-[12px] md:text-[13.5px] text-stone-700 leading-relaxed max-w-full md:max-w-[400px]">
+                                    Instagram : @loeroes.arryamihardjo &amp; Tiktok : @loeroes.arryamihardjo</div>
+                            </div>
+
+                            <!-- Role & Focus -->
+                            <div
+                                class="flex-1 p-4 md:p-6 border-b-[0.5px] border-stone-800 flex flex-col gap-4 md:gap-6">
+                                <div class="flex flex-col md:flex-row gap-2 md:gap-4">
+                                    <div
+                                        class="w-full md:w-32 shrink-0 font-sans text-[9px] md:text-[10px] font-bold tracking-widest text-[#444] uppercase">
+                                        ROLE:</div>
+                                    <div
+                                        class="font-sans text-[12px] md:text-[13.5px] text-stone-800 leading-relaxed font-normal">
+                                        Content Creator &amp; Social Media Strategist</div>
+                                </div>
+                                <div class="flex flex-col md:flex-row gap-2 md:gap-4">
+                                    <div
+                                        class="w-full md:w-32 shrink-0 font-sans text-[9px] md:text-[10px] font-bold tracking-widest text-[#444] uppercase">
+                                        FOCUS:</div>
+                                    <div
+                                        class="font-sans text-[12px] md:text-[13.5px] text-stone-800 leading-relaxed font-normal">
+                                        Content Planning, Visual Direction, and Audience Targeting</div>
+                                </div>
+                            </div>
+
+                            <!-- Impact -->
+                            <div
+                                class="p-4 md:p-6 border-b-[0.5px] border-stone-800 flex flex-col md:flex-row gap-2 md:gap-4">
+                                <div
+                                    class="w-full md:w-32 shrink-0 font-sans text-[9px] md:text-[10px] font-bold tracking-widest text-[#444] uppercase">
+                                    IMPACT:</div>
+                                <div
+                                    class="font-sans text-[12px] md:text-[13.5px] text-stone-800 leading-relaxed font-normal">
+                                    Develop structured content strategy to improve brand positioning and engagement
+                                    within beauty audience</div>
+                            </div>
+
+                            <!-- Revisions & Duration -->
+                            <div
+                                class="flex flex-row border-b-[0.5px] border-stone-800 font-sans text-[9px] md:text-[10px] font-bold tracking-widest text-[#444] uppercase items-stretch">
+                                <div
+                                    class="flex-1 p-4 md:p-6 border-r-[0.5px] border-stone-800 flex items-center md:items-start gap-2 md:gap-4 flex-wrap">
+                                    <span>REVISIONS:</span>
+                                    <span
+                                        class="font-[Caveat,cursive] text-[20px] md:text-[24px] lowercase tracking-normal text-stone-800 font-normal mt-[-2px] md:mt-[-5px]">1
+                                        round</span>
+                                </div>
+                                <div
+                                    class="flex-1 p-4 md:p-6 flex items-center md:items-start gap-2 md:gap-4 flex-wrap">
+                                    <span>DURATION:</span>
+                                    <span
+                                        class="font-[Caveat,cursive] text-[20px] md:text-[24px] lowercase tracking-normal text-stone-800 font-normal mt-[-2px] md:mt-[-5px]">tbd</span>
+                                </div>
+                            </div>
+
+                            <!-- Footer Text -->
+                            <div class="p-4 text-center mt-2 opacity-60">
+                                <span
+                                    class="font-sans text-[10px] md:text-[11px] font-bold tracking-[0.25em] text-stone-800 uppercase">laras-space.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PAGE 1 (Flipper) -->
+                <div id="flipperPage0"
+                    class="absolute inset-0 w-full h-full z-30 transition-transform duration-[1200ms] ease-[cubic-bezier(0.2,0.8,0.2,1)]"
+                    style="transform-style: preserve-3d; transform-origin: left center;">
+                    <!-- FRONT FACE of PAGE 1 (Project 1) -->
+                    <div class="absolute inset-0 w-full h-full bg-[#f4f3ed] rounded-r-[8px] rounded-l-[4px] md:rounded-l-[2px] shadow-[0_0_30px_rgba(0,0,0,0.6),inset_-10px_0_20px_rgba(0,0,0,0.03)] flex"
+                        style="backface-visibility: hidden;">
+                        <!-- Holes -->
+                        <div
+                            class="absolute left-2 md:left-4 top-[15%] bottom-[15%] flex flex-col justify-between py-4 md:py-8 z-20">
+                            <div class="flex flex-col gap-[10px] md:gap-[13px]">
+                                <div
+                                    class="w-3 h-3 md:w-4 md:h-4 rounded-full bg-[#0a0a0a] shadow-[inset_2px_4px_6px_rgba(0,0,0,0.8)]">
+                                </div>
+                                <div
+                                    class="w-3 h-3 md:w-4 md:h-4 rounded-full bg-[#0a0a0a] shadow-[inset_2px_4px_6px_rgba(0,0,0,0.8)]">
+                                </div>
+                                <div
+                                    class="w-3 h-3 md:w-4 md:h-4 rounded-full bg-[#0a0a0a] shadow-[inset_2px_4px_6px_rgba(0,0,0,0.8)]">
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-[10px] md:gap-[13px]">
+                                <div
+                                    class="w-3 h-3 md:w-4 md:h-4 rounded-full bg-[#0a0a0a] shadow-[inset_2px_4px_6px_rgba(0,0,0,0.8)]">
+                                </div>
+                                <div
+                                    class="w-3 h-3 md:w-4 md:h-4 rounded-full bg-[#0a0a0a] shadow-[inset_2px_4px_6px_rgba(0,0,0,0.8)]">
+                                </div>
+                                <div
+                                    class="w-3 h-3 md:w-4 md:h-4 rounded-full bg-[#0a0a0a] shadow-[inset_2px_4px_6px_rgba(0,0,0,0.8)]">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Page Content Layout -->
+                        <div
+                            class="flex-1 ml-10 md:ml-16 mr-4 md:mr-[72px] my-6 md:my-10 flex flex-col relative drop-shadow-sm overflow-y-auto no-scrollbar">
+                            <div
+                                class="absolute inset-0 border-[0.5px] border-stone-800 pointer-events-none opacity-40">
+                            </div>
+
+                            <!-- Header -->
+                            <div
+                                class="p-4 md:p-6 border-b-[0.5px] border-stone-800 flex justify-between items-center bg-[#f4f3ed]">
+                                <h2
+                                    class="font-serif text-2xl md:text-[32px] md:leading-tight font-medium tracking-tight text-stone-900">
+                                    Social Media Handle</h2>
+                                <button onclick="turnPage(1)"
+                                    class="text-[10px] md:text-[11px] font-bold tracking-widest text-[#FF007F] hover:text-[#e00070] uppercase flex items-center gap-1 transition-colors">NEXT
+                                    <span class="material-symbols-outlined text-sm">east</span></button>
+                            </div>
+
+                            <!-- Description -->
+                            <div
+                                class="p-4 md:p-6 border-b-[0.5px] border-stone-800 flex flex-col md:flex-row gap-2 md:gap-4">
+                                <div
+                                    class="w-full md:w-32 shrink-0 font-sans text-[9px] md:text-[10px] font-bold tracking-widest text-[#444] uppercase">
+                                    DESCRIPTION:</div>
+                                <div
+                                    class="font-sans text-[12px] md:text-[13.5px] text-stone-700 leading-relaxed max-w-full md:max-w-[300px]">
+                                    Instagram : @meetusonmonday &amp; Tiktok : @meetusonmonday</div>
+                            </div>
+
+                            <!-- Role & Focus -->
+                            <div
+                                class="flex-1 p-4 md:p-6 border-b-[0.5px] border-stone-800 flex flex-col gap-4 md:gap-6">
+                                <div class="flex flex-col md:flex-row gap-2 md:gap-4">
+                                    <div
+                                        class="w-full md:w-32 shrink-0 font-sans text-[9px] md:text-[10px] font-bold tracking-widest text-[#444] uppercase">
+                                        ROLE:</div>
+                                    <div
+                                        class="font-sans text-[12px] md:text-[13.5px] text-stone-800 leading-relaxed font-normal">
+                                        Owner &amp; Content Manager</div>
+                                </div>
+                                <div class="flex flex-col md:flex-row gap-2 md:gap-4">
+                                    <div
+                                        class="w-full md:w-32 shrink-0 font-sans text-[9px] md:text-[10px] font-bold tracking-widest text-[#444] uppercase">
+                                        FOCUS:</div>
+                                    <div
+                                        class="font-sans text-[12px] md:text-[13.5px] text-stone-800 leading-relaxed font-normal">
+                                        Branding, Content Creation, Visual Identity, and Story Telling</div>
+                                </div>
+                            </div>
+
+                            <!-- Impact -->
+                            <div
+                                class="p-4 md:p-6 border-b-[0.5px] border-stone-800 flex flex-col md:flex-row gap-2 md:gap-4">
+                                <div
+                                    class="w-full md:w-32 shrink-0 font-sans text-[9px] md:text-[10px] font-bold tracking-widest text-[#444] uppercase">
+                                    IMPACT:</div>
+                                <div
+                                    class="font-sans text-[12px] md:text-[13.5px] text-stone-800 leading-relaxed font-normal">
+                                    Built a consistent aesthetic driven brand, focusing on soft visual storytelling and
+                                    audience connection through relatable content</div>
+                            </div>
+
+                            <!-- Revisions & Duration -->
+                            <div
+                                class="flex flex-row border-b-[0.5px] border-stone-800 font-sans text-[9px] md:text-[10px] font-bold tracking-widest text-[#444] uppercase items-stretch">
+                                <div
+                                    class="flex-1 p-4 md:p-6 border-r-[0.5px] border-stone-800 flex items-center md:items-start gap-2 md:gap-4 flex-wrap">
+                                    <span>REVISIONS:</span>
+                                    <span
+                                        class="font-[Caveat,cursive] text-[20px] md:text-[24px] lowercase tracking-normal text-stone-800 font-normal mt-[-2px] md:mt-[-5px]">1
+                                        round</span>
+                                </div>
+                                <div
+                                    class="flex-1 p-4 md:p-6 flex items-center md:items-start gap-2 md:gap-4 flex-wrap">
+                                    <span>DURATION:</span>
+                                    <span
+                                        class="font-[Caveat,cursive] text-[20px] md:text-[24px] lowercase tracking-normal text-stone-800 font-normal mt-[-2px] md:mt-[-5px]">tbd</span>
+                                </div>
+                            </div>
+
+                            <!-- Footer Text -->
+                            <div class="p-4 text-center mt-2 opacity-60">
+                                <span
+                                    class="font-sans text-[10px] md:text-[11px] font-bold tracking-[0.25em] text-stone-800 uppercase">laras-space.com</span>
+                            </div>
+                        </div>
+
+                        <!-- Floating Elements on Page 1 -->
+                        <div
+                            class="absolute right-[-20px] md:right-[-60px] top-[10%] hidden lg:block z-40 drop-shadow-[0_15px_30px_rgba(0,0,0,0.3)] w-[240px] h-[400px] pointer-events-none">
+                            <div class="absolute top-48 right-20 z-0 pointer-events-auto"
+                                style="animation: float1 4.5s ease-in-out infinite;">
+                                <img src="assets/10.png"
+                                    class="w-24 md:w-32 object-contain -rotate-12 drop-shadow-[0_8px_16px_rgba(0,0,0,0.25)]"
+                                    alt="Illustration 1" />
+                            </div>
+                            <div class="absolute top-0 right-16 z-10 pointer-events-auto"
+                                style="animation: float3 5s ease-in-out infinite 0.5s;">
+                                <img src="assets/6.png"
+                                    class="w-[100px] md:w-[130px] object-contain rotate-[-4deg] drop-shadow-[0_8px_20px_rgba(0,0,0,0.3)]"
+                                    alt="Illustration 2" />
+                            </div>
+                            <div class="absolute top-20 right-[-10px] z-20 pointer-events-auto"
+                                style="animation: float2 5.5s ease-in-out infinite 1s;">
+                                <img src="assets/14.png"
+                                    class="w-[120px] md:w-[160px] object-contain rotate-[6deg] drop-shadow-[0_12px_25px_rgba(0,0,0,0.4)]"
+                                    alt="Illustration 3" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Social Media Content Modal -->
+    <div id="contentModal"
+        class="fixed inset-0 z-[100] hidden flex flex-col items-center justify-center p-2 md:p-4 font-sans">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-stone-100/80 backdrop-blur-md transition-opacity duration-300 opacity-0 cursor-pointer"
+            id="contentBackdrop" onclick="closeContentModal()"></div>
+
+        <!-- Modal Content -->
+        <div id="contentWrapper"
+            class="relative z-10 w-full max-w-[1240px] h-full max-h-[95vh] flex flex-col items-center justify-start pointer-events-none transition-all duration-500 scale-95 opacity-0 mt-4 md:mt-8">
+
+            <!-- Header Title -->
+            <h2 class="text-stone-800 text-2xl md:text-[34px] font-bold tracking-tight mb-6 pointer-events-auto z-50 text-center"
+                style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; letter-spacing: -1px;">
+            </h2>
+
+            <!-- Stack Layer Container -->
+            <div class="relative w-[95%] md:w-[92%] h-[550px] md:h-[760px] pointer-events-auto">
+
+                <!-- Layer 1: Background Graphics Paper Tab -->
+                <div class="absolute inset-x-2 md:inset-x-6 top-0 bottom-8 bg-[#fdbbd1] rounded-t-[8px] rounded-b-[4px] shadow-sm transform rotate-[-2deg] origin-bottom-left"
+                    style="background-image: linear-gradient(rgba(200, 50, 80, 0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(200, 50, 80, 0.2) 1px, transparent 1px); background-size: 15px 15px;">
+                    <div class="absolute top-[-24px] right-[10%] w-[250px] h-[30px] bg-[#fdbbd1] rounded-t-[8px] border-b-0 shadow-sm"
+                        style="background-image: linear-gradient(rgba(200, 50, 80, 0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(200, 50, 80, 0.2) 1px, transparent 1px); background-size: 15px 15px;">
+                        <span
+                            class="absolute bottom-1 left-4 font-mono text-[9px] text-[#801030] tracking-widest opacity-80 uppercase">LAGETYA
+                            NORMALES...</span>
+                    </div>
+                </div>
+
+                <!-- Layer 2: White Paper Tab -->
+                <div
+                    class="absolute inset-x-1 md:inset-x-3 top-[2%] bottom-[6%] bg-[#fefefe] rounded-t-[6px] rounded-b-[4px] shadow-sm border border-stone-200 transform rotate-[1deg]">
+                    <div
+                        class="absolute top-[-20px] left-[5%] w-[200px] h-[25px] bg-[#fefefe] rounded-t-[6px] border-t border-l border-r border-stone-200 shadow-sm flex items-end px-3 pb-1">
+                        <span class="text-[8px] opacity-40 font-mono">001-DESIGN</span>
+                    </div>
+                </div>
+
+                <!-- Layer 3: Main Pink Folder -->
+                <div
+                    class="absolute inset-0 bg-[#fbd4d9] rounded-t-[8px] rounded-b-[4px] shadow-lg drop-shadow-2xl flex flex-col p-3 md:p-6 pb-8 md:pb-12 border-t border-white/50">
+
+                    <!-- Front Folder Tab -->
+                    <div
+                        class="absolute top-[-22px] left-[30%] w-[220px] h-[22px] bg-[#fbd4d9] shadow-[inset_0_2px_4px_rgba(255,255,255,0.4)] rounded-t-[8px] border-t border-l border-r border-white/50">
+                    </div>
+
+                    <!-- Fake Binder Clips -->
+                    <div
+                        class="absolute top-[-25px] left-[15%] w-[6px] h-[45px] rounded-[20px] border-[1.5px] border-stone-500 bg-gradient-to-r from-stone-200 via-stone-100 to-stone-400 shadow-sm transform rotate-[5deg] z-10">
+                    </div>
+                    <div
+                        class="absolute top-[-20px] right-[40%] w-[5px] h-[40px] rounded-[20px] border-[1.5px] border-stone-500 bg-gradient-to-r from-stone-200 via-stone-100 to-stone-400 shadow-sm transform rotate-[-8deg] z-10">
+                    </div>
+
+                    <!-- Inner HTML/CSS Safari Browser Mockup -->
+                    <div
+                        class="w-full h-full bg-white rounded-[10px] md:rounded-[12px] shadow-[inset_0_0_10px_rgba(0,0,0,0.05)] border border-stone-200 flex flex-col overflow-hidden relative z-20">
+
+                        <!-- Safari Top Bar -->
+                        <div
+                            class="w-full h-10 md:h-[45px] bg-[#f3f3f4] border-b border-stone-300 flex items-center px-3 md:px-4 justify-between shrink-0">
+                            <div class="flex items-center gap-2 md:gap-4 opacity-50">
+                                <span class="material-symbols-outlined text-[16px] md:text-[20px]">chevron_left</span>
+                                <span class="material-symbols-outlined text-[16px] md:text-[20px]">chevron_right</span>
+                            </div>
+                            <div
+                                class="bg-white px-8 py-1 rounded-[6px] border border-stone-200 shadow-sm flex items-center gap-1 max-w-[200px] md:max-w-[300px] w-full justify-center">
+                                <span
+                                    class="material-symbols-outlined text-[12px] md:text-[14px] text-stone-600">lock</span>
+                                <span
+                                    class="text-[10px] md:text-[12px] font-medium text-stone-800">laraspraba.com</span>
+                            </div>
+                            <div class="flex items-center gap-2 md:gap-3 opacity-60">
+                                <span class="material-symbols-outlined text-[14px] md:text-[18px]">ios_share</span>
+                                <span class="material-symbols-outlined text-[16px] md:text-[20px]">add</span>
+                            </div>
+                        </div>
+
+                        <!-- Browser Scroll Content -->
+                        <div
+                            class="flex-1 overflow-y-auto overflow-x-hidden p-3 md:p-6 flex flex-col gap-4 md:gap-6 bg-white no-scrollbar">
+                            <!-- Subheader Search/Menu area -->
+                            <div
+                                class="flex flex-col md:flex-row justify-between items-center w-full gap-2 text-[10px] md:text-[12px] font-medium text-stone-600 border-b border-stone-100 pb-2">
+                                <div class="w-full md:w-auto relative hidden md:block">
+                                    <span
+                                        class="material-symbols-outlined absolute left-2 top-1.5 text-[14px] opacity-50">search</span>
+                                    <input type="text" disabled placeholder="Search..."
+                                        class="bg-stone-100 rounded-full pl-7 pr-3 py-1 outline-none text-[11px]" />
+                                </div>
+                                <div class="flex gap-3 md:gap-5">
+                                    <span class="hover:text-stone-900 cursor-pointer text-[#FF007F]">Mockups</span>
+                                    <span class="hover:text-stone-900 cursor-pointer">Fonts</span>
+                                    <span class="hover:text-stone-900 cursor-pointer">Templates</span>
+                                    <span class="hover:text-stone-900 cursor-pointer">Graphics</span>
+                                    <span class="hover:text-stone-900 cursor-pointer">3D Models</span>
+                                    <span class="hover:text-stone-900 cursor-pointer">Colors</span>
+                                </div>
+                            </div>
+
+                            <!-- Main Grid Section -->
+                            <div class="flex gap-4 md:gap-8 flex-col md:flex-row">
+
+                                <!-- Left Sidebar Text -->
+                                <div class="w-full md:w-[240px] shrink-0 hidden md:flex flex-col gap-3">
+                                    <h3 class="font-bold text-stone-900 text-[16px] xl:text-[18px] leading-snug">I
+                                        create clean and elegant content that combines visual aesthetics with clear
+                                        communication.</h3>
+                                    <p class="text-[12px] xl:text-[13px] text-stone-500 leading-relaxed font-medium">
+                                        I focus on audience relevance, storytelling, and consistency to ensure each
+                                        content delivers both visual appeal and purpose.
+                                    </p>
+                                </div>
+
+                                <!-- Thumbnails Grid -->
+                                <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 w-full pb-10">
+                                    <!-- Thumb 1 (Replaced with Asset 33) -->
+                                    <div class="flex flex-col gap-2 group cursor-pointer"
+                                        onclick="openMediaModal('assets/33.mov')">
+                                        <div
+                                            class="w-full aspect-square bg-stone-100 rounded-[6px] border border-stone-200 overflow-hidden relative flex items-center justify-center transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+
+                                            <!-- Note: Using video or image fallback. If 33 is an mp4, you can replace img with video tag -->
+                                            <video src="assets/33.mov"
+                                                class="absolute inset-0 w-full h-full object-cover z-0" autoplay loop
+                                                muted playsinline></video>
+
+                                            <!-- Play Button Overlay -->
+                                            <div
+                                                class="w-10 h-10 rounded-full bg-white/60 backdrop-blur-md shadow-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:bg-white/90 z-10 border border-white/40">
+                                                <div
+                                                    class="w-0 h-0 border-t-[6px] border-b-[6px] border-l-[8px] border-transparent border-l-[#FF007F] ml-0.5 drop-shadow-sm">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p
+                                            class="text-[11px] xl:text-[12px] font-semibold leading-tight text-stone-800 px-1 mt-0.5">
+                                            Social Media Content Video 1</p>
+                                    </div>
+
+                                    <!-- Thumb 2 -->
+                                    <div class="flex flex-col gap-2 group cursor-pointer"
+                                        onclick="openMediaModal('assets/34.mov')">
+                                        <div
+                                            class="w-full aspect-square bg-stone-100 rounded-[6px] border border-stone-200 overflow-hidden relative flex items-center justify-center transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                            <video src="assets/34.mov"
+                                                class="absolute inset-0 w-full h-full object-cover z-0" autoplay loop
+                                                muted playsinline></video>
+                                            <div
+                                                class="w-10 h-10 rounded-full bg-white/60 backdrop-blur-md shadow-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:bg-white/90 z-10 border border-white/40">
+                                                <div
+                                                    class="w-0 h-0 border-t-[6px] border-b-[6px] border-l-[8px] border-transparent border-l-[#FF007F] ml-0.5 drop-shadow-sm">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p
+                                            class="text-[11px] xl:text-[12px] font-semibold leading-tight text-stone-800 px-1 mt-0.5">
+                                            Social Media Content Video 2</p>
+                                    </div>
+
+                                    <!-- Thumb 3 -->
+                                    <div class="flex flex-col gap-2 group cursor-pointer"
+                                        onclick="openMediaModal('assets/35.mov')">
+                                        <div
+                                            class="w-full aspect-square bg-stone-100 rounded-[6px] border border-stone-200 overflow-hidden relative flex items-center justify-center transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                            <video src="assets/35.mov"
+                                                class="absolute inset-0 w-full h-full object-cover z-0" autoplay loop
+                                                muted playsinline></video>
+                                            <div
+                                                class="w-10 h-10 rounded-full bg-white/60 backdrop-blur-md shadow-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:bg-white/90 z-10 border border-white/40">
+                                                <div
+                                                    class="w-0 h-0 border-t-[6px] border-b-[6px] border-l-[8px] border-transparent border-l-[#FF007F] ml-0.5 drop-shadow-sm">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p
+                                            class="text-[11px] xl:text-[12px] font-semibold leading-tight text-stone-800 px-1 mt-0.5">
+                                            Social Media Content Video 3</p>
+                                    </div>
+
+                                    <!-- Thumb 4 -->
+                                    <div class="flex flex-col gap-2 group cursor-pointer"
+                                        onclick="openMediaModal('assets/36.mov')">
+                                        <div
+                                            class="w-full aspect-square bg-stone-100 rounded-[6px] border border-stone-200 overflow-hidden relative flex items-center justify-center transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                            <video src="assets/36.mov"
+                                                class="absolute inset-0 w-full h-full object-cover z-0" autoplay loop
+                                                muted playsinline></video>
+                                            <div
+                                                class="w-10 h-10 rounded-full bg-white/60 backdrop-blur-md shadow-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:bg-white/90 z-10 border border-white/40">
+                                                <div
+                                                    class="w-0 h-0 border-t-[6px] border-b-[6px] border-l-[8px] border-transparent border-l-[#FF007F] ml-0.5 drop-shadow-sm">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p
+                                            class="text-[11px] xl:text-[12px] font-semibold leading-tight text-stone-800 px-1 mt-0.5">
+                                            Social Media Content Video 4</p>
+                                    </div>
+
+                                    <!-- Thumb 5 -->
+                                    <div class="flex flex-col gap-2 group cursor-pointer"
+                                        onclick="openMediaModal('assets/37.mov')">
+                                        <div
+                                            class="w-full aspect-square bg-stone-100 rounded-[6px] border border-stone-200 overflow-hidden relative flex items-center justify-center transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                            <video src="assets/37.mov"
+                                                class="absolute inset-0 w-full h-full object-cover z-0" autoplay loop
+                                                muted playsinline></video>
+                                            <div
+                                                class="w-10 h-10 rounded-full bg-white/60 backdrop-blur-md shadow-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:bg-white/90 z-10 border border-white/40">
+                                                <div
+                                                    class="w-0 h-0 border-t-[6px] border-b-[6px] border-l-[8px] border-transparent border-l-[#FF007F] ml-0.5 drop-shadow-sm">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p
+                                            class="text-[11px] xl:text-[12px] font-semibold leading-tight text-stone-800 px-1 mt-0.5">
+                                            Social Media Content Video 5</p>
+                                    </div>
+
+                                    <!-- Thumb 6 -->
+                                    <div class="flex flex-col gap-2 group cursor-pointer"
+                                        onclick="openMediaModal('assets/38.mov')">
+                                        <div
+                                            class="w-full aspect-square bg-stone-100 rounded-[6px] border border-stone-200 overflow-hidden relative flex items-center justify-center transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                            <video src="assets/38.mov"
+                                                class="absolute inset-0 w-full h-full object-cover z-0" autoplay loop
+                                                muted playsinline></video>
+                                            <div
+                                                class="w-10 h-10 rounded-full bg-white/60 backdrop-blur-md shadow-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:bg-white/90 z-10 border border-white/40">
+                                                <div
+                                                    class="w-0 h-0 border-t-[6px] border-b-[6px] border-l-[8px] border-transparent border-l-[#FF007F] ml-0.5 drop-shadow-sm">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p
+                                            class="text-[11px] xl:text-[12px] font-semibold leading-tight text-stone-800 px-1 mt-0.5">
+                                            Social Media Content Video 6</p>
+                                    </div>
+
+                                    <!-- Thumb 7 -->
+                                    <div class="flex flex-col gap-2 group cursor-pointer"
+                                        onclick="openMediaModal('assets/39.mp4')">
+                                        <div
+                                            class="w-full aspect-square bg-stone-100 rounded-[6px] border border-stone-200 overflow-hidden relative flex items-center justify-center transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                            <video src="assets/39.mp4"
+                                                class="absolute inset-0 w-full h-full object-cover z-0" autoplay loop
+                                                muted playsinline></video>
+                                            <div
+                                                class="w-10 h-10 rounded-full bg-white/60 backdrop-blur-md shadow-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:bg-white/90 z-10 border border-white/40">
+                                                <div
+                                                    class="w-0 h-0 border-t-[6px] border-b-[6px] border-l-[8px] border-transparent border-l-[#FF007F] ml-0.5 drop-shadow-sm">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p
+                                            class="text-[11px] xl:text-[12px] font-semibold leading-tight text-stone-800 px-1 mt-0.5">
+                                            Social Media Content Video 7</p>
+                                    </div>
+
+                                    <!-- Thumb 8 -->
+                                    <div class="flex flex-col gap-1.5 group cursor-pointer">
+                                        <div
+                                            class="w-full aspect-square bg-[#ececec] rounded-[4px] border border-stone-200 overflow-hidden relative flex items-center justify-center transition-transform hover:shadow-md">
+                                            <div class="absolute inset-0 bg-stone-800"></div>
+                                            <div
+                                                class="w-7 h-7 rounded-full bg-white/40 backdrop-blur-md flex items-center justify-center transition-transform group-hover:scale-110 group-hover:bg-white/70 z-10">
+                                                <div
+                                                    class="w-0 h-0 border-t-[5px] border-b-[5px] border-l-[7px] border-transparent border-l-stone-900 ml-0.5">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="text-[8px] md:text-[9px] font-medium leading-tight text-stone-700">
+                                            Perfect binding open magazine</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Decor Elements (Replacing Sticky Note) -->
+                    <!-- Decor 1: 12.png (Top Right) -->
+                    <div class="absolute top-[-30px] md:top-[-40px] right-[-10px] md:right-[-30px] w-[60px] md:w-[90px] h-[60px] md:h-[90px] z-50 pointer-events-none"
+                        style="animation: popIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; opacity: 0;">
+                        <img src="assets/12.png" alt="Decor"
+                            class="w-full h-full object-contain drop-shadow-xl animate-[spin_5s_linear_infinite]" />
+                    </div>
+
+                    <!-- Decor 2: 13.png (Bottom Left) -->
+                    <div class="absolute bottom-[-15px] md:bottom-[-25px] left-[-15px] md:left-[-35px] w-[70px] md:w-[100px] h-[70px] md:h-[100px] z-50 pointer-events-none"
+                        style="animation: popIn 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; opacity: 0;">
+                        <img src="assets/13.png" alt="Decor"
+                            class="w-full h-full object-contain drop-shadow-[0_10px_20px_rgba(0,0,0,0.3)] animate-bounce"
+                            style="animation-duration: 2s;" />
+                    </div>
+
+                    <!-- Decor 3: 8.png (Mid Right) -->
+                    <div class="absolute bottom-[10%] right-[-20px] md:right-[-45px] w-[80px] md:w-[120px] h-[80px] md:h-[120px] z-50 pointer-events-none"
+                        style="animation: popIn 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; opacity: 0;">
+                        <div style="animation: float2 3s ease-in-out infinite;">
+                            <img src="assets/8.png" alt="Decor" class="w-full h-full object-contain drop-shadow-2xl" />
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Footer Text -->
+            <span
+                class="font-serif text-[18px] md:text-[22px] tracking-tight text-stone-700 mt-14 mb-4 opacity-90 block">(gabbtopia)</span>
+
+            <!-- Modal close X button floating -->
+            <button onclick="closeContentModal()"
+                class="absolute top-0 right-0 p-3 text-stone-500 hover:text-stone-800 pointer-events-auto z-50">
+                <span class="material-symbols-outlined text-[32px]">close</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Visual Design Content Modal (Beige Elegant) -->
+    <div id="visualModal"
+        class="fixed inset-0 z-[100] hidden flex flex-col items-center justify-center p-2 md:p-4 font-sans">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-stone-100/80 backdrop-blur-md transition-opacity duration-300 opacity-0 cursor-pointer"
+            id="visualBackdrop" onclick="closeVisualModal()"></div>
+
+        <!-- Modal Content -->
+        <div id="visualWrapper"
+            class="relative z-10 w-full max-w-[1240px] h-full max-h-[95vh] flex flex-col items-center justify-start pointer-events-none transition-all duration-500 scale-95 opacity-0 mt-4 md:mt-8">
+
+            <!-- Header Title -->
+            <h2 class="text-stone-800 text-2xl md:text-[34px] font-bold tracking-tight mb-6 pointer-events-auto z-50 text-center"
+                style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; letter-spacing: -1px;">
+            </h2>
+
+            <!-- Stack Layer Container -->
+            <div class="relative w-[95%] md:w-[92%] h-[550px] md:h-[760px] pointer-events-auto">
+
+                <!-- Layer 1: Background Graphics Paper Tab (Beige Accent) -->
+                <div class="absolute inset-x-2 md:inset-x-6 top-0 bottom-8 bg-[#e6dfd1] rounded-t-[8px] rounded-b-[4px] shadow-sm transform rotate-[-2deg] origin-bottom-left"
+                    style="background-image: linear-gradient(rgba(180, 160, 130, 0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(180, 160, 130, 0.2) 1px, transparent 1px); background-size: 15px 15px;">
+                    <div class="absolute top-[-24px] right-[10%] w-[250px] h-[30px] bg-[#e6dfd1] rounded-t-[8px] border-b-0 shadow-sm"
+                        style="background-image: linear-gradient(rgba(180, 160, 130, 0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(180, 160, 130, 0.2) 1px, transparent 1px); background-size: 15px 15px;">
+                        <span
+                            class="absolute bottom-1 left-4 font-mono text-[9px] text-[#5c5448] tracking-widest opacity-80 uppercase">VISUAL
+                            DESIGN ARCHIVE</span>
+                    </div>
+                </div>
+
+                <!-- Layer 2: White Paper Tab -->
+                <div
+                    class="absolute inset-x-1 md:inset-x-3 top-[2%] bottom-[6%] bg-[#fefefe] rounded-t-[6px] rounded-b-[4px] shadow-sm border border-stone-200 transform rotate-[1deg]">
+                    <div
+                        class="absolute top-[-20px] left-[5%] w-[200px] h-[25px] bg-[#fefefe] rounded-t-[6px] border-t border-l border-r border-stone-200 shadow-sm flex items-end px-3 pb-1">
+                        <span class="text-[8px] opacity-40 font-mono">002-VISUAL</span>
+                    </div>
+                </div>
+
+                <!-- Layer 3: Main Beige Folder -->
+                <div
+                    class="absolute inset-0 bg-[#f5f5dc] rounded-t-[8px] rounded-b-[4px] shadow-lg drop-shadow-2xl flex flex-col p-3 md:p-6 pb-8 md:pb-12 border-t border-white/50">
+
+                    <!-- Front Folder Tab -->
+                    <div
+                        class="absolute top-[-22px] left-[30%] w-[220px] h-[22px] bg-[#f5f5dc] shadow-[inset_0_2px_4px_rgba(255,255,255,0.4)] rounded-t-[8px] border-t border-l border-r border-white/50">
+                    </div>
+
+                    <!-- Fake Binder Clips -->
+                    <div
+                        class="absolute top-[-25px] left-[15%] w-[6px] h-[45px] rounded-[20px] border-[1.5px] border-stone-500 bg-gradient-to-r from-stone-200 via-stone-100 to-stone-400 shadow-sm transform rotate-[5deg] z-10">
+                    </div>
+                    <div
+                        class="absolute top-[-20px] right-[40%] w-[5px] h-[40px] rounded-[20px] border-[1.5px] border-stone-500 bg-gradient-to-r from-stone-200 via-stone-100 to-stone-400 shadow-sm transform rotate-[-8deg] z-10">
+                    </div>
+
+                    <!-- Inner HTML/CSS Safari Browser Mockup -->
+                    <div
+                        class="w-full h-full bg-white rounded-[10px] md:rounded-[12px] shadow-[inset_0_0_10px_rgba(0,0,0,0.05)] border border-stone-200 flex flex-col overflow-hidden relative z-20">
+
+                        <!-- Safari Top Bar -->
+                        <div
+                            class="w-full h-10 md:h-[45px] bg-[#f3f3f4] border-b border-stone-300 flex items-center px-3 md:px-4 justify-between shrink-0">
+                            <div class="flex items-center gap-2 md:gap-4 opacity-50">
+                                <span class="material-symbols-outlined text-[16px] md:text-[20px]">chevron_left</span>
+                                <span class="material-symbols-outlined text-[16px] md:text-[20px]">chevron_right</span>
+                            </div>
+                            <div
+                                class="bg-white px-8 py-1 rounded-[6px] border border-stone-200 shadow-sm flex items-center gap-1 max-w-[200px] md:max-w-[300px] w-full justify-center">
+                                <span
+                                    class="material-symbols-outlined text-[12px] md:text-[14px] text-stone-600">lock</span>
+                                <span
+                                    class="text-[10px] md:text-[12px] font-medium text-stone-800">laraspraba.com</span>
+                            </div>
+                            <div class="flex items-center gap-2 md:gap-3 opacity-60">
+                                <span class="material-symbols-outlined text-[14px] md:text-[18px]">ios_share</span>
+                                <span class="material-symbols-outlined text-[16px] md:text-[20px]">add</span>
+                            </div>
+                        </div>
+
+                        <!-- Browser Scroll Content -->
+                        <div
+                            class="flex-1 overflow-y-auto overflow-x-hidden p-3 md:p-6 flex flex-col gap-4 md:gap-6 bg-white no-scrollbar">
+                            <!-- Subheader Search/Menu area -->
+                            <div
+                                class="flex flex-col md:flex-row justify-between items-center w-full gap-2 text-[10px] md:text-[12px] font-medium text-stone-600 border-b border-stone-100 pb-2">
+                                <div class="w-full md:w-auto relative hidden md:block">
+                                    <span
+                                        class="material-symbols-outlined absolute left-2 top-1.5 text-[14px] opacity-50">search</span>
+                                    <input type="text" disabled placeholder="Search..."
+                                        class="bg-stone-100 rounded-full pl-7 pr-3 py-1 outline-none text-[11px]" />
+                                </div>
+                                <div class="flex gap-3 md:gap-5">
+                                    <span class="hover:text-stone-900 cursor-pointer text-[#d4a373]">Branding</span>
+                                    <span class="hover:text-stone-900 cursor-pointer">Posters</span>
+                                    <span class="hover:text-stone-900 cursor-pointer">Typography</span>
+                                    <span class="hover:text-stone-900 cursor-pointer">UI/UX</span>
+                                    <span class="hover:text-stone-900 cursor-pointer">Illustrations</span>
+                                </div>
+                            </div>
+
+                            <!-- Main Grid Section -->
+                            <div class="flex gap-4 md:gap-8 flex-col md:flex-row">
+
+                                <!-- Left Sidebar Text -->
+                                <div class="w-full md:w-[240px] shrink-0 hidden md:flex flex-col gap-3">
+                                    <h3 class="font-bold text-stone-900 text-[16px] xl:text-[18px] leading-snug">Visual
+                                        design is about balance, harmony, and visual impact.</h3>
+                                    <p class="text-[12px] xl:text-[13px] text-stone-500 leading-relaxed font-medium">
+                                        I create visual identities and designs that are not only aesthetically pleasing
+                                        but also functional and communicative.
+                                    </p>
+                                </div>
+
+                                <!-- Thumbnails Grid (Placeholder Layout) -->
+                                <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 w-full pb-10">
+                                    <!-- Asset 40 -->
+                                    <div class="flex flex-col gap-2 group cursor-pointer"
+                                        onclick="openMediaModal('assets/40.png')">
+                                        <div
+                                            class="w-full aspect-square bg-stone-100 rounded-[6px] border border-stone-200 overflow-hidden relative flex items-center justify-center transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                            <img src="assets/40.png"
+                                                class="absolute inset-0 w-full h-full object-cover z-0"
+                                                alt="Visual 1" />
+                                        </div>
+                                        <p
+                                            class="text-[11px] xl:text-[12px] font-semibold leading-tight text-stone-800 px-1 mt-0.5">
+                                            Visual Design 1</p>
+                                    </div>
+                                    <!-- Asset 41 -->
+                                    <div class="flex flex-col gap-2 group cursor-pointer"
+                                        onclick="openMediaModal('assets/41.png')">
+                                        <div
+                                            class="w-full aspect-square bg-stone-100 rounded-[6px] border border-stone-200 overflow-hidden relative flex items-center justify-center transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                            <img src="assets/41.png"
+                                                class="absolute inset-0 w-full h-full object-cover z-0"
+                                                alt="Visual 2" />
+                                        </div>
+                                        <p
+                                            class="text-[11px] xl:text-[12px] font-semibold leading-tight text-stone-800 px-1 mt-0.5">
+                                            Visual Design 2</p>
+                                    </div>
+                                    <!-- Asset 42 -->
+                                    <div class="flex flex-col gap-2 group cursor-pointer"
+                                        onclick="openMediaModal('assets/42.png')">
+                                        <div
+                                            class="w-full aspect-square bg-stone-100 rounded-[6px] border border-stone-200 overflow-hidden relative flex items-center justify-center transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                            <img src="assets/42.png"
+                                                class="absolute inset-0 w-full h-full object-cover z-0"
+                                                alt="Visual 3" />
+                                        </div>
+                                        <p
+                                            class="text-[11px] xl:text-[12px] font-semibold leading-tight text-stone-800 px-1 mt-0.5">
+                                            Visual Design 3</p>
+                                    </div>
+                                    <!-- Asset 43 -->
+                                    <div class="flex flex-col gap-2 group cursor-pointer"
+                                        onclick="openMediaModal('assets/43.png')">
+                                        <div
+                                            class="w-full aspect-square bg-stone-100 rounded-[6px] border border-stone-200 overflow-hidden relative flex items-center justify-center transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                            <img src="assets/43.png"
+                                                class="absolute inset-0 w-full h-full object-cover z-0"
+                                                alt="Visual 4" />
+                                        </div>
+                                        <p
+                                            class="text-[11px] xl:text-[12px] font-semibold leading-tight text-stone-800 px-1 mt-0.5">
+                                            Visual Design 4</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Decor Elements -->
+                    <div class="absolute top-[-30px] md:top-[-40px] right-[-10px] md:right-[-30px] w-[60px] md:w-[90px] h-[60px] md:h-[90px] z-50 pointer-events-none"
+                        style="animation: popIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; opacity: 0;">
+                        <img src="assets/12.png" alt="Decor"
+                            class="w-full h-full object-contain drop-shadow-xl animate-[spin_5s_linear_infinite]" />
+                    </div>
+                    <div class="absolute bottom-[-15px] md:bottom-[-25px] left-[-15px] md:left-[-35px] w-[70px] md:w-[100px] h-[70px] md:h-[100px] z-50 pointer-events-none"
+                        style="animation: popIn 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; opacity: 0;">
+                        <img src="assets/13.png" alt="Decor"
+                            class="w-full h-full object-contain drop-shadow-[0_10px_20px_rgba(0,0,0,0.3)] animate-bounce"
+                            style="animation-duration: 2s;" />
+                    </div>
+                    <div class="absolute bottom-[10%] right-[-20px] md:right-[-45px] w-[80px] md:w-[120px] h-[80px] md:h-[120px] z-50 pointer-events-none"
+                        style="animation: popIn 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; opacity: 0;">
+                        <div style="animation: float2 3s ease-in-out infinite;">
+                            <img src="assets/8.png" alt="Decor" class="w-full h-full object-contain drop-shadow-2xl" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Text -->
+            <span
+                class="font-serif text-[18px] md:text-[22px] tracking-tight text-stone-700 mt-14 mb-4 opacity-90 block">(gabbtopia)</span>
+
+            <!-- Modal close X button floating -->
+            <button onclick="closeVisualModal()"
+                class="absolute top-0 right-0 p-3 text-stone-500 hover:text-stone-800 pointer-events-auto z-50">
+                <span class="material-symbols-outlined text-[32px]">close</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Fullscreen Media Player Modal (Handles Video & Image) -->
+    <div id="mediaModal"
+        class="fixed inset-0 z-[200] hidden flex flex-col items-center justify-center p-4 md:p-10 font-sans">
+        <div class="absolute inset-0 bg-black/90 backdrop-blur-sm cursor-pointer transition-opacity duration-300 opacity-0"
+            id="mediaBackdrop" onclick="closeMediaModal()"></div>
+
+        <div id="mediaContent"
+            class="relative z-10 w-full max-w-[1000px] aspect-video bg-black rounded-[12px] md:rounded-[20px] shadow-[0_0_50px_rgba(0,0,0,0.8)] overflow-hidden transition-all duration-500 scale-95 opacity-0 flex items-center justify-center border border-white/10 pointer-events-auto">
+
+            <!-- Loading spinner placeholder -->
+            <span
+                class="material-symbols-outlined text-white/50 text-4xl animate-spin absolute z-0 pointer-events-none">progress_activity</span>
+
+            <video id="fullVideoPlayer" controls
+                class="hidden w-full h-full outline-none object-contain relative z-10 bg-black" playsinline></video>
+
+            <img id="fullImagePlayer" src="" class="hidden w-full h-full object-contain relative z-10 bg-black"
+                alt="Full Image" />
+
+            <button onclick="closeMediaModal()"
+                class="absolute top-4 right-4 md:top-6 md:right-6 w-10 h-10 rounded-full bg-black/50 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-colors z-20 shadow-lg">
+                <span class="material-symbols-outlined font-medium">close</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Creative Style Detail Modal (Styled like Paper/Assets 44) -->
+    <div id="creativeModal"
+        class="fixed inset-0 z-[150] hidden flex flex-col items-center justify-center p-6 md:p-10 font-sans">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-stone-900/40 backdrop-blur-sm cursor-pointer transition-opacity duration-300 opacity-0"
+            id="creativeBackdrop" onclick="closeCreativeStyleModal()"></div>
+
+        <!-- Paper Content -->
+        <div id="creativeWrapper"
+            class="relative z-10 w-full max-w-[500px] bg-[#fbfaf5] rounded-[4px] shadow-[0_20px_50px_rgba(0,0,0,0.15)] overflow-hidden transition-all duration-500 scale-95 opacity-0 p-10 md:p-14 border border-stone-200/50"
+            style="background-image: radial-gradient(#e5e7eb 0.5px, transparent 0.5px); background-size: 20px 20px;">
+            
+            <!-- Header -->
+            <div class="mb-10 text-center">
+                <h3 class="font-display-lg text-3xl md:text-4xl text-[#111111] italic mb-2">Creative Style</h3>
+                <div class="w-12 h-[2px] bg-[#FF007F] mx-auto opacity-30"></div>
+            </div>
+
+            <!-- Content Points -->
+            <ul class="space-y-6 text-stone-700">
+                <li class="flex items-start gap-4">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF007F] mt-2.5 shrink-0"></span>
+                    <p class="text-[15px] md:text-[17px] leading-relaxed"><span class="font-bold text-stone-900 uppercase text-[12px] tracking-widest mr-2">Tone :</span> calm, soft branding, intellectual</p>
+                </li>
+                <li class="flex items-start gap-4">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF007F] mt-2.5 shrink-0"></span>
+                    <p class="text-[15px] md:text-[17px] leading-relaxed"><span class="font-bold text-stone-900 uppercase text-[12px] tracking-widest mr-2">Visual :</span> elegant, clean, minimalist</p>
+                </li>
+                <li class="flex items-start gap-4">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF007F] mt-2.5 shrink-0"></span>
+                    <p class="text-[15px] md:text-[17px] leading-relaxed"><span class="font-bold text-stone-900 uppercase text-[12px] tracking-widest mr-2">Strength :</span> storytelling, emotional touch</p>
+                </li>
+            </ul>
+
+            <!-- Floating Sticker/Stamp style element -->
+            <div class="absolute bottom-6 right-6 opacity-20 hover:opacity-100 transition-opacity duration-500 cursor-default select-none">
+                <span class="font-[Caveat,cursive] text-2xl text-[#FF007F] -rotate-12 block">Personal Brand</span>
+            </div>
+
+            <!-- Close button -->
+            <button onclick="closeCreativeStyleModal()"
+                class="absolute top-4 right-4 text-stone-400 hover:text-stone-800 transition-colors">
+                <span class="material-symbols-outlined text-2xl">close</span>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function openMediaModal(src) {
+            const modal = document.getElementById('mediaModal');
+            const backdrop = document.getElementById('mediaBackdrop');
+            const content = document.getElementById('mediaContent');
+            const videoPlayer = document.getElementById('fullVideoPlayer');
+            const imagePlayer = document.getElementById('fullImagePlayer');
+
+            const isVideo = src.toLowerCase().endsWith('.mov') || src.toLowerCase().endsWith('.mp4');
+
+            if (isVideo) {
+                videoPlayer.src = src;
+                videoPlayer.classList.remove('hidden');
+                imagePlayer.classList.add('hidden');
+                videoPlayer.play().catch(e => console.log('Video play interrupted', e));
+            } else {
+                imagePlayer.src = src;
+                imagePlayer.classList.remove('hidden');
+                videoPlayer.classList.add('hidden');
+            }
+
+            modal.classList.remove('hidden');
+            void modal.offsetWidth;
+
+            backdrop.classList.add('opacity-100');
+            backdrop.classList.remove('opacity-0');
+
+            content.classList.remove('scale-95', 'opacity-0');
+            content.classList.add('scale-100', 'opacity-100');
+        }
+
+        function closeMediaModal() {
+            const modal = document.getElementById('mediaModal');
+            const backdrop = document.getElementById('mediaBackdrop');
+            const content = document.getElementById('mediaContent');
+            const videoPlayer = document.getElementById('fullVideoPlayer');
+            const imagePlayer = document.getElementById('fullImagePlayer');
+
+            if (!modal || modal.classList.contains('hidden')) return;
+
+            backdrop.classList.remove('opacity-100');
+            backdrop.classList.add('opacity-0');
+
+            content.classList.remove('scale-100', 'opacity-100');
+            content.classList.add('scale-95', 'opacity-0');
+
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                videoPlayer.pause();
+                videoPlayer.src = '';
+                imagePlayer.src = '';
+            }, 300);
+        }
+        function openCreativeStyleModal() {
+            const modal = document.getElementById('creativeModal');
+            const backdrop = document.getElementById('creativeBackdrop');
+            const content = document.getElementById('creativeWrapper');
+
+            modal.classList.remove('hidden');
+            void modal.offsetWidth;
+
+            backdrop.classList.add('opacity-100');
+            backdrop.classList.remove('opacity-0');
+
+            content.classList.remove('scale-95', 'opacity-0');
+            content.classList.add('scale-100', 'opacity-100');
+        }
+
+        function closeCreativeStyleModal() {
+            const modal = document.getElementById('creativeModal');
+            const backdrop = document.getElementById('creativeBackdrop');
+            const content = document.getElementById('creativeWrapper');
+
+            if (!modal || modal.classList.contains('hidden')) return;
+
+            backdrop.classList.remove('opacity-100');
+            backdrop.classList.add('opacity-0');
+
+            content.classList.remove('scale-100', 'opacity-100');
+            content.classList.add('scale-95', 'opacity-0');
+
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 500);
+        }
+
+        function openContentModal() {
+            const modal = document.getElementById('contentModal');
+            const backdrop = document.getElementById('contentBackdrop');
+            const content = document.getElementById('contentWrapper');
+
+            modal.classList.remove('hidden');
+            void modal.offsetWidth;
+
+            backdrop.classList.add('opacity-100');
+            backdrop.classList.remove('opacity-0');
+
+            content.classList.remove('scale-95', 'opacity-0');
+            content.classList.add('scale-100', 'opacity-100');
+        }
+
+        function closeContentModal() {
+            const modal = document.getElementById('contentModal');
+            const backdrop = document.getElementById('contentBackdrop');
+            const content = document.getElementById('contentWrapper');
+
+            if (!modal || modal.classList.contains('hidden')) return;
+
+            backdrop.classList.remove('opacity-100');
+            backdrop.classList.add('opacity-0');
+
+            content.classList.remove('scale-100', 'opacity-100');
+            content.classList.add('scale-95', 'opacity-0');
+
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 500);
+        }
+
+        function openVisualModal() {
+            const modal = document.getElementById('visualModal');
+            const backdrop = document.getElementById('visualBackdrop');
+            const content = document.getElementById('visualWrapper');
+
+            modal.classList.remove('hidden');
+            void modal.offsetWidth;
+
+            backdrop.classList.add('opacity-100');
+            backdrop.classList.remove('opacity-0');
+
+            content.classList.remove('scale-95', 'opacity-0');
+            content.classList.add('scale-100', 'opacity-100');
+        }
+
+        function closeVisualModal() {
+            const modal = document.getElementById('visualModal');
+            const backdrop = document.getElementById('visualBackdrop');
+            const content = document.getElementById('visualWrapper');
+
+            if (!modal || modal.classList.contains('hidden')) return;
+
+            backdrop.classList.remove('opacity-100');
+            backdrop.classList.add('opacity-0');
+
+            content.classList.remove('scale-100', 'opacity-100');
+            content.classList.add('scale-95', 'opacity-0');
+
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 500);
+        }
+
+        let currentBinderPage = 0; // 0: Project 1, 1: Project 2, 2: Project 3
+
+        function openModal() {
+            const modal = document.getElementById('binderModal');
+            const backdrop = document.getElementById('binderBackdrop');
+            const content = document.getElementById('binderContent');
+
+            // Reset page position
+            turnPage(0);
+
+            modal.classList.remove('hidden');
+            void modal.offsetWidth;
+
+            backdrop.classList.add('opacity-100');
+            backdrop.classList.remove('opacity-0');
+
+            content.classList.remove('scale-95', 'opacity-0');
+            content.classList.add('scale-100', 'opacity-100');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('binderModal');
+            const backdrop = document.getElementById('binderBackdrop');
+            const content = document.getElementById('binderContent');
+
+            if (!modal || modal.classList.contains('hidden')) return;
+
+            backdrop.classList.remove('opacity-100');
+            backdrop.classList.add('opacity-0');
+
+            content.classList.remove('scale-100', 'opacity-100');
+            content.classList.add('scale-95', 'opacity-0');
+
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                turnPage(0); // reset on close
+            }, 500);
+        }
+
+        // Page flipping animation based on integer indices
+        function turnPage(pageIndex) {
+            currentBinderPage = pageIndex;
+
+            for (let i = 0; i <= 2; i++) {
+                // Toggle left mockups crossfade
+                const mockup = document.getElementById('mockupPage' + i);
+                if (mockup) {
+                    if (i === currentBinderPage) {
+                        mockup.classList.remove('opacity-0');
+                        mockup.classList.add('opacity-100');
+                    } else {
+                        mockup.classList.remove('opacity-100');
+                        mockup.classList.add('opacity-0');
+                    }
+                }
+
+                // Toggle right page flippers
+                const flipper = document.getElementById('flipperPage' + i);
+                if (flipper) {
+                    if (i < currentBinderPage) {
+                        flipper.style.transform = 'rotateY(-180deg)';
+                    } else {
+                        flipper.style.transform = 'rotateY(0deg)';
+                    }
+                }
+            }
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+                closeContentModal();
+            }
+        });
+
+        // Intersection Observer for Scroll Reveal
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal, .journey-reveal').forEach(el => {
+            revealObserver.observe(el);
+        });
+
+        // Smooth Scroll for Nav Links
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

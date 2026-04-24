@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500&family=Caveat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- Background overlay for noise -->
+    <div class="noise-overlay"></div>
+
+    <!-- Header Navigation -->
+    <nav class="top-nav">
+        <ul>
+            <li>LinkedIn</li>
+            <li>Instagram</li>
+            <li>TikTok</li>
+        </ul>
+    </nav>
+
+    <div class="main-container">
+        <!-- ======================= -->
+        <!-- PAGE 1: SCRAPBOOK DESK -->
+        <!-- ======================= -->
+        <section class="page page-one" id="page-one">
+
+        <!-- CENTRAL TITLE -->
+        <h1 class="main-title draggable" style="top: 38%; left: 50%; transform: translateX(-50%) rotate(-2deg);" data-rotate="rotate(-2deg)">Laras<br>Ardhaningtyas</h1>
+        <p class="subtitle draggable" style="top: 55%; left: 50%; transform: translateX(-50%) rotate(-1deg);" data-rotate="rotate(-1deg)">Content Creator | Digital Marketing Enthusiast</p>
+
+        <!-- ============================================== -->
+        <!-- SCATTERED ELEMENTS (Mimicking the reference layout) -->
+        <!-- ============================================== -->
+
+        <!-- Top Left: Letter Beads & Beads chain -->
+        <div class="draggable beads-container" style="top: 20%; left: 10%; transform: rotate(-5deg);">
+            <div class="bead">C</div>
+            <div class="bead">R</div>
+            <div class="bead">E</div>
+            <div class="bead">A</div>
+            <div class="bead">T</div>
+            <div class="bead">E</div>
+        </div>
+
+        <!-- Top Middle: Yellow Sticky Note -->
+        <div class="draggable sticky-note yellow empty-sticky" style="top: 10%; left: 35%; transform: rotate(-10deg);">
+            <!-- String attachment -->
+            <div class="string-bow" style="top: -20px; left: 80%;">🎀</div>
+        </div>
+
+        <!-- Top Right: Pink Envelope -->
+        <div class="draggable css-envelope" style="top: 15%; left: 60%; transform: rotate(15deg);">
+            <div class="env-flap"></div>
+            <div class="env-paper"></div>
+        </div>
+
+        <!-- Left: Digital Camera AI Asset -->
+        <img src="assets/pink_camera_1776866068440.png" class="draggable real-asset" style="top: 40%; left: 15%; transform: rotate(8deg); width: 220px;" data-rotate="rotate(8deg)">
+
+        <!-- Right: Vinyl Record, Poster, and Flower -->
+        <img src="assets/pressed_flower_1776866100444.png" class="draggable real-asset" style="top: 25%; left: 78%; transform: rotate(15deg); width: 200px;" data-rotate="rotate(15deg)">
+        <div class="draggable vinyl-record" style="top: 35%; left: 65%; transform: rotate(-5deg);">
+            <div class="vinyl-grooves"></div>
+            <div class="vinyl-center"></div>
+        </div>
+        <div class="draggable poster-pink" style="top: 45%; left: 60%; transform: rotate(10deg);">
+            <h3>STUDIO<br>JAMS</h3>
+        </div>
+
+        <!-- Bottom Left: Trinket Dish & Ticket AI Asset -->
+        <img src="assets/trinket_dish_1776866085168.png" class="draggable real-asset" style="top: 65%; left: 12%; transform: rotate(-15deg); width: 180px;" data-rotate="rotate(-15deg)">
+        <div class="draggable ticket orange-ticket" style="top: 70%; left: 25%; transform: rotate(-8deg);">
+            <p class="ticket-header">Travelcard</p>
+            <p class="ticket-date">18 APR 18</p>
+            <p class="ticket-barcode">||| || ||| | ||</p>
+        </div>
+        <div class="draggable ticket pink-ticket" style="top: 75%; left: 35%; transform: rotate(12deg);">
+            <p>PG13</p>
+            <p>ADMIT ONE</p>
+        </div>
+
+        <!-- Bottom Middle: Cherries -->
+        <div class="draggable cherry-icon" style="top: 70%; left: 48%; transform: rotate(-5deg); font-size: 5rem; filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.2));">🍒</div>
+
+        <!-- Bottom Right: Crossword / Grid paper -->
+        <div class="draggable crossword-board" style="top: 65%; left: 75%; transform: rotate(-5deg);">
+             <!-- Small grid squares created via CSS -->
+        </div>
+
+        <!-- Floating Text details -->
+        <div class="draggable floating-text" style="bottom: 5%; right: 5%;">
+            <p>1.50</p>
+        </div>
+
+            <div class="washi-tape washi-dot draggable" style="top: 25%; left: 80%; transform: rotate(45deg);"></div>
+            <div class="washi-tape washi-plaid draggable" style="top: 80%; left: 15%; transform: rotate(-25deg);"></div>
+
+            <!-- Scroll CTA -->
+            <div class="scroll-cta" onclick="document.getElementById('page-two').scrollIntoView({behavior: 'smooth'})">
+                Explore Projects <br> <span>↓</span>
+            </div>
+        </section>
+
+        <!-- ======================= -->
+        <!-- PAGE 2: MINIMALIST OS -->
+        <!-- ======================= -->
+        <section class="page page-two" id="page-two">
+            
+            <!-- Top OS Header -->
+            <div class="os-header scroll-animate">
+                <div class="os-dots">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                </div>
+                <div class="os-title">
+                    about_me.new_file<br><span>spring 2026</span>
+                </div>
+                <div class="os-actions">
+                    <span>⊕</span> <span>⊖</span> <span>🔗</span> <span>⟳</span>
+                </div>
+            </div>
+
+            <!-- OS Desktop Area -->
+            <div class="os-desktop">
+                
+                <!-- Central Profile Widget -->
+                <div class="profile-widget scroll-animate" id="profile-trigger" style="cursor: pointer;">
+                    <div class="polaroid-frame" style="position: relative;">
+                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&q=80" alt="Profile" class="profile-photo">
+                        <!-- Click badge -->
+                        <div class="click-badge">Click for<br>About Me!</div>
+                    </div>
+                    <div class="name-pill">Laras.exe</div>
+                    <!-- Pixel cursor decoration -->
+                    <div class="pixel-cursor"></div>
+                </div>
+
+                <!-- Folders -->
+                <!-- Folder 1: Pink -->
+                <div class="folder-wrapper scroll-animate" style="top: 15%; left: 25%;">
+                    <div class="mac-folder pink-folder"></div>
+                    <p>social media content</p>
+                </div>
+
+                <!-- Folder 2: Yellow -->
+                <div class="folder-wrapper scroll-animate" style="top: 60%; left: 15%;">
+                    <div class="mac-folder yellow-folder"></div>
+                    <p>visual design content</p>
+                </div>
+
+                <!-- Folder 3: Blue -->
+                <div class="folder-wrapper scroll-animate" style="top: 40%; left: 70%;">
+                    <div class="mac-folder blue-folder"></div>
+                    <p>campaign & project</p>
+                </div>
+
+            </div>
+
+        </section>
+    </div>
+
+    <!-- ABOUT ME MODAL (OS Style) -->
+    <div class="modal-overlay" id="about-modal">
+        <div class="os-window-modal">
+            <!-- Header -->
+            <div class="os-header">
+                <div class="os-dots">
+                    <span class="dot red" id="close-modal" style="cursor: pointer;"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                </div>
+                <div class="os-title">about_laras.txt</div>
+                <div class="os-actions" style="visibility: hidden;"><span>⊕</span></div>
+            </div>
+            
+            <!-- Body -->
+            <div class="modal-content">
+                <h2 class="modal-name">Laras Ardhaningtyas</h2>
+                <div class="modal-badge">Digital Business Major • Faculty of Economics and Business</div>
+                
+                <div class="modal-grid">
+                    <div class="modal-col">
+                        <h4>Main Skills</h4>
+                        <p>Content Creation<br>Copywriting<br>Campaign Ideation</p>
+                    </div>
+                    <div class="modal-col">
+                        <h4>Tools</h4>
+                        <p>Canva Premium<br>CapCut Pro</p>
+                    </div>
+                </div>
+
+                <div class="modal-quote">
+                    "I create content that connects, not just content that looks good."
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
