@@ -102,6 +102,10 @@
         }
     </script>
     <style>
+        html, body {
+            background-color: #000000;
+            overflow-x: hidden;
+        }
         .paper-grain {
             position: fixed;
             top: 0;
@@ -302,8 +306,10 @@
             }
         }
 
-        .animate-spin-slow {
-            animation: spinLucu 12s linear infinite;
+        .active-visual-tab {
+            color: #1a1a1a !important;
+            box-shadow: 0 -4px 0 #FF007F !important;
+            background: #f5f5dc !important;
         }
     </style>
 </head>
@@ -640,7 +646,7 @@
                 </div>
 
                 <!-- 2: Campaign & Project -->
-                <div class="flex flex-col items-center group w-28 cursor-pointer reveal" style="transition-delay: 100ms;">
+                <div class="flex flex-col items-center group w-28 cursor-pointer reveal" onclick="openCampaignModal()" style="transition-delay: 100ms;">
                     <div style="animation: float3 4.5s ease-in-out infinite 0.7s;">
                         <img src="assets/20.png" alt="Campaign & Project" class="w-24 h-24 drop-shadow-[0_4px_12px_rgba(0,0,0,0.1)] object-contain transition-transform group-hover:scale-110" />
                     </div>
@@ -679,7 +685,7 @@
     <section id="contact" class="relative w-full overflow-hidden mt-0 bg-[#000000]">
         <!-- Top Half (Matches Background with curve) -->
         <div
-            class="relative w-full bg-[#f9f9f9] pb-64 md:pb-80 rounded-b-[60px] md:rounded-b-[120px] shadow-sm z-10 reveal">
+            class="relative w-full bg-[#f9f9f9] pb-24 md:pb-32 rounded-b-[60px] md:rounded-b-[120px] shadow-sm z-10 reveal">
             <div class="max-w-[1440px] mx-auto px-8 pt-16 md:pt-24 flex flex-col items-center">
                 <!-- Header Labels -->
                 <div
@@ -1537,9 +1543,6 @@
             </div>
 
             <!-- Footer Text -->
-            <span
-                class="font-serif text-[18px] md:text-[22px] tracking-tight text-stone-700 mt-14 mb-4 opacity-90 block"></span>
-
             <!-- Modal close X button floating -->
             <button onclick="closeContentModal()"
                 class="absolute top-0 right-0 p-3 text-stone-500 hover:text-stone-800 pointer-events-auto z-50">
@@ -1629,95 +1632,318 @@
                         </div>
 
                         <!-- Browser Scroll Content -->
-                        <div
-                            class="flex-1 overflow-y-auto overflow-x-hidden p-3 md:p-6 flex flex-col gap-4 md:gap-6 bg-white no-scrollbar">
-                            <!-- Subheader Search/Menu area -->
-                            <div
-                                class="flex flex-col md:flex-row justify-between items-center w-full gap-2 text-[10px] md:text-[12px] font-medium text-stone-600 border-b border-stone-100 pb-2">
-                                <div class="w-full md:w-auto relative hidden md:block">
-                                    <span
-                                        class="material-symbols-outlined absolute left-2 top-1.5 text-[14px] opacity-50">search</span>
-                                    <input type="text" disabled placeholder="Search..."
-                                        class="bg-stone-100 rounded-full pl-7 pr-3 py-1 outline-none text-[11px]" />
-                                </div>
-                                <div class="flex gap-3 md:gap-5">
-                                    <span class="hover:text-stone-900 cursor-pointer text-[#d4a373]">Branding</span>
-                                    <span class="hover:text-stone-900 cursor-pointer">Posters</span>
-                                    <span class="hover:text-stone-900 cursor-pointer">Typography</span>
-                                    <span class="hover:text-stone-900 cursor-pointer">UI/UX</span>
-                                    <span class="hover:text-stone-900 cursor-pointer">Illustrations</span>
-                                </div>
+                        <div class="flex-1 overflow-y-auto overflow-x-hidden p-3 md:p-6 flex flex-col gap-4 md:gap-6 bg-white no-scrollbar">
+
+                            <!-- Sub-folder Navigation (Stacked Tabs) -->
+                            <div class="flex flex-wrap gap-2 md:gap-4 mb-2 pt-2">
+                                <button id="tab-infografis" onclick="switchVisualSubFolder('infografis')" 
+                                    class="px-4 py-1.5 rounded-t-lg bg-[#f5f5dc] border-t border-l border-r border-stone-300 text-[10px] md:text-[12px] font-bold tracking-widest text-stone-800 transition-all duration-300 shadow-[-2px_-2px_5px_rgba(0,0,0,0.05)] active-visual-tab">
+                                    INFOGRAFIS
+                                </button>
+                                <button id="tab-education" onclick="switchVisualSubFolder('education')" 
+                                    class="px-4 py-1.5 rounded-t-lg bg-[#e8e8d5] border-t border-l border-r border-stone-200 text-[10px] md:text-[12px] font-bold tracking-widest text-stone-500 hover:text-stone-800 transition-all duration-300 shadow-[-2px_-2px_5px_rgba(0,0,0,0.05)]">
+                                    EDUCATION POSTER
+                                </button>
+                                <button id="tab-event" onclick="switchVisualSubFolder('event')" 
+                                    class="px-4 py-1.5 rounded-t-lg bg-[#dfdfcc] border-t border-l border-r border-stone-200 text-[10px] md:text-[12px] font-bold tracking-widest text-stone-500 hover:text-stone-800 transition-all duration-300 shadow-[-2px_-2px_5px_rgba(0,0,0,0.05)]">
+                                    EVENT POSTER
+                                </button>
+                                <button id="tab-mockup" onclick="switchVisualSubFolder('mockup')" 
+                                    class="px-4 py-1.5 rounded-t-lg bg-[#d6d6c3] border-t border-l border-r border-stone-200 text-[10px] md:text-[12px] font-bold tracking-widest text-stone-500 hover:text-stone-800 transition-all duration-300 shadow-[-2px_-2px_5px_rgba(0,0,0,0.05)]">
+                                    MOCK-UP
+                                </button>
+                                <button id="tab-poster" onclick="switchVisualSubFolder('poster')" 
+                                    class="px-4 py-1.5 rounded-t-lg bg-[#cdcdc0] border-t border-l border-r border-stone-200 text-[10px] md:text-[12px] font-bold tracking-widest text-stone-500 hover:text-stone-800 transition-all duration-300 shadow-[-2px_-2px_5px_rgba(0,0,0,0.05)]">
+                                    POSTER
+                                </button>
                             </div>
 
-                            <!-- Main Grid Section -->
-                            <div class="flex gap-4 md:gap-8 flex-col md:flex-row">
-
-                                <!-- Left Sidebar Text -->
-                                <div class="w-full md:w-[240px] shrink-0 hidden md:flex flex-col gap-3">
-                                    <h3 class="font-bold text-stone-900 text-[16px] xl:text-[18px] leading-snug">Visual
-                                        design is about balance, harmony, and visual impact.</h3>
-                                    <p class="text-[12px] xl:text-[13px] text-stone-500 leading-relaxed font-medium">
-                                        I create visual identities and designs that are not only aesthetically pleasing
-                                        but also functional and communicative.
-                                    </p>
-                                </div>
-
-                                <!-- Thumbnails Grid (Placeholder Layout) -->
-                                <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 w-full pb-10">
-                                    <!-- Asset 40 -->
-                                    <div class="flex flex-col gap-2 group cursor-pointer"
-                                        onclick="openMediaModal('assets/40.png')">
-                                        <div
-                                            class="w-full aspect-square bg-stone-100 rounded-[6px] border border-stone-200 overflow-hidden relative flex items-center justify-center transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
-                                            <img src="assets/40.png"
-                                                class="absolute inset-0 w-full h-full object-cover z-0"
-                                                alt="Visual 1" />
+                            <!-- Main Content Area with Sub-folders -->
+                            <div class="flex-1 relative">
+                                
+                                <!-- INFOGRAFIS (Category 1) -->
+                                <div id="vfolder-infografis" class="vfolder-content block pb-10">
+                                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 w-full">
+                                        <!-- Asset 40 -->
+                                        <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('assets/40.png')">
+                                            <div class="w-full aspect-square bg-stone-50 rounded-[6px] border border-stone-200 overflow-hidden relative flex items-center justify-center transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                                <img src="assets/40.png" class="absolute inset-0 w-full h-full object-cover z-0" alt="Visual 1" />
+                                            </div>
+                                            <p class="text-[11px] xl:text-[12px] font-semibold leading-tight text-stone-800 px-1 mt-0.5">Infografis 1</p>
                                         </div>
-                                        <p
-                                            class="text-[11px] xl:text-[12px] font-semibold leading-tight text-stone-800 px-1 mt-0.5">
-                                            Visual Design 1</p>
-                                    </div>
-                                    <!-- Asset 41 -->
-                                    <div class="flex flex-col gap-2 group cursor-pointer"
-                                        onclick="openMediaModal('assets/41.png')">
-                                        <div
-                                            class="w-full aspect-square bg-stone-100 rounded-[6px] border border-stone-200 overflow-hidden relative flex items-center justify-center transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
-                                            <img src="assets/41.png"
-                                                class="absolute inset-0 w-full h-full object-cover z-0"
-                                                alt="Visual 2" />
+                                        <!-- Asset 41 -->
+                                        <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('assets/41.png')">
+                                            <div class="w-full aspect-square bg-stone-50 rounded-[6px] border border-stone-200 overflow-hidden relative flex items-center justify-center transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                                <img src="assets/41.png" class="absolute inset-0 w-full h-full object-cover z-0" alt="Visual 2" />
+                                            </div>
+                                            <p class="text-[11px] xl:text-[12px] font-semibold leading-tight text-stone-800 px-1 mt-0.5">Infografis 2</p>
                                         </div>
-                                        <p
-                                            class="text-[11px] xl:text-[12px] font-semibold leading-tight text-stone-800 px-1 mt-0.5">
-                                            Visual Design 2</p>
-                                    </div>
-                                    <!-- Asset 42 -->
-                                    <div class="flex flex-col gap-2 group cursor-pointer"
-                                        onclick="openMediaModal('assets/42.png')">
-                                        <div
-                                            class="w-full aspect-square bg-stone-100 rounded-[6px] border border-stone-200 overflow-hidden relative flex items-center justify-center transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
-                                            <img src="assets/42.png"
-                                                class="absolute inset-0 w-full h-full object-cover z-0"
-                                                alt="Visual 3" />
+                                        <!-- Asset 42 -->
+                                        <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('assets/42.png')">
+                                            <div class="w-full aspect-square bg-stone-50 rounded-[6px] border border-stone-200 overflow-hidden relative flex items-center justify-center transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                                <img src="assets/42.png" class="absolute inset-0 w-full h-full object-cover z-0" alt="Visual 3" />
+                                            </div>
+                                            <p class="text-[11px] xl:text-[12px] font-semibold leading-tight text-stone-800 px-1 mt-0.5">Infografis 3</p>
                                         </div>
-                                        <p
-                                            class="text-[11px] xl:text-[12px] font-semibold leading-tight text-stone-800 px-1 mt-0.5">
-                                            Visual Design 3</p>
-                                    </div>
-                                    <!-- Asset 43 -->
-                                    <div class="flex flex-col gap-2 group cursor-pointer"
-                                        onclick="openMediaModal('assets/43.png')">
-                                        <div
-                                            class="w-full aspect-square bg-stone-100 rounded-[6px] border border-stone-200 overflow-hidden relative flex items-center justify-center transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
-                                            <img src="assets/43.png"
-                                                class="absolute inset-0 w-full h-full object-cover z-0"
-                                                alt="Visual 4" />
+                                        <!-- Asset 43 -->
+                                        <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('assets/43.png')">
+                                            <div class="w-full aspect-square bg-stone-50 rounded-[6px] border border-stone-200 overflow-hidden relative flex items-center justify-center transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                                <img src="assets/43.png" class="absolute inset-0 w-full h-full object-cover z-0" alt="Visual 4" />
+                                            </div>
+                                            <p class="text-[11px] xl:text-[12px] font-semibold leading-tight text-stone-800 px-1 mt-0.5">Infografis 4</p>
                                         </div>
-                                        <p
-                                            class="text-[11px] xl:text-[12px] font-semibold leading-tight text-stone-800 px-1 mt-0.5">
-                                            Visual Design 4</p>
                                     </div>
                                 </div>
+
+                                <!-- EDUCATION POSTER (Category 2) -->
+                                <div id="vfolder-education" class="vfolder-content hidden pb-10">
+                                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 w-full">
+                                        <!-- Education Posters 45-61 -->
+                                        <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('assets/45.png')">
+                                            <div class="w-full aspect-[3/4] bg-stone-50 rounded-[6px] border border-stone-200 overflow-hidden relative transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                                <img src="assets/45.png" class="absolute inset-0 w-full h-full object-cover" alt="Edu 1" />
+                                            </div>
+                                            <p class="text-[10px] font-semibold text-stone-800 uppercase tracking-tighter">Education Poster 1</p>
+                                        </div>
+                                        <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('assets/46.png')">
+                                            <div class="w-full aspect-[3/4] bg-stone-50 rounded-[6px] border border-stone-200 overflow-hidden relative transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                                <img src="assets/46.png" class="absolute inset-0 w-full h-full object-cover" alt="Edu 2" />
+                                            </div>
+                                            <p class="text-[10px] font-semibold text-stone-800 uppercase tracking-tighter">Education Poster 2</p>
+                                        </div>
+                                        <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('assets/47.png')">
+                                            <div class="w-full aspect-[3/4] bg-stone-50 rounded-[6px] border border-stone-200 overflow-hidden relative transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                                <img src="assets/47.png" class="absolute inset-0 w-full h-full object-cover" alt="Edu 3" />
+                                            </div>
+                                            <p class="text-[10px] font-semibold text-stone-800 uppercase tracking-tighter">Education Poster 3</p>
+                                        </div>
+                                        <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('assets/48.png')">
+                                            <div class="w-full aspect-[3/4] bg-stone-50 rounded-[6px] border border-stone-200 overflow-hidden relative transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                                <img src="assets/48.png" class="absolute inset-0 w-full h-full object-cover" alt="Edu 4" />
+                                            </div>
+                                            <p class="text-[10px] font-semibold text-stone-800 uppercase tracking-tighter">Education Poster 4</p>
+                                        </div>
+                                        <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('assets/49.png')">
+                                            <div class="w-full aspect-[3/4] bg-stone-50 rounded-[6px] border border-stone-200 overflow-hidden relative transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                                <img src="assets/49.png" class="absolute inset-0 w-full h-full object-cover" alt="Edu 5" />
+                                            </div>
+                                            <p class="text-[10px] font-semibold text-stone-800 uppercase tracking-tighter">Education Poster 5</p>
+                                        </div>
+                                        <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('assets/50.png')">
+                                            <div class="w-full aspect-[3/4] bg-stone-50 rounded-[6px] border border-stone-200 overflow-hidden relative transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                                <img src="assets/50.png" class="absolute inset-0 w-full h-full object-cover" alt="Edu 6" />
+                                            </div>
+                                            <p class="text-[10px] font-semibold text-stone-800 uppercase tracking-tighter">Education Poster 6</p>
+                                        </div>
+                                        <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('assets/51.png')">
+                                            <div class="w-full aspect-[3/4] bg-stone-50 rounded-[6px] border border-stone-200 overflow-hidden relative transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                                <img src="assets/51.png" class="absolute inset-0 w-full h-full object-cover" alt="Edu 7" />
+                                            </div>
+                                            <p class="text-[10px] font-semibold text-stone-800 uppercase tracking-tighter">Education Poster 7</p>
+                                        </div>
+                                        <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('assets/52.png')">
+                                            <div class="w-full aspect-[3/4] bg-stone-50 rounded-[6px] border border-stone-200 overflow-hidden relative transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                                <img src="assets/52.png" class="absolute inset-0 w-full h-full object-cover" alt="Edu 8" />
+                                            </div>
+                                            <p class="text-[10px] font-semibold text-stone-800 uppercase tracking-tighter">Education Poster 8</p>
+                                        </div>
+                                        <!-- Assets 53-61 -->
+                                        <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('assets/53.png')">
+                                            <div class="w-full aspect-[3/4] bg-stone-50 rounded-[6px] border border-stone-200 overflow-hidden relative transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                                <img src="assets/53.png" class="absolute inset-0 w-full h-full object-cover" alt="Edu 9" />
+                                            </div>
+                                            <p class="text-[10px] font-semibold text-stone-800 uppercase tracking-tighter">Education Poster 9</p>
+                                        </div>
+                                        <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('assets/54.png')">
+                                            <div class="w-full aspect-[3/4] bg-stone-50 rounded-[6px] border border-stone-200 overflow-hidden relative transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                                <img src="assets/54.png" class="absolute inset-0 w-full h-full object-cover" alt="Edu 10" />
+                                            </div>
+                                            <p class="text-[10px] font-semibold text-stone-800 uppercase tracking-tighter">Education Poster 10</p>
+                                        </div>
+                                        <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('assets/55.png')">
+                                            <div class="w-full aspect-[3/4] bg-stone-50 rounded-[6px] border border-stone-200 overflow-hidden relative transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                                <img src="assets/55.png" class="absolute inset-0 w-full h-full object-cover" alt="Edu 11" />
+                                            </div>
+                                            <p class="text-[10px] font-semibold text-stone-800 uppercase tracking-tighter">Education Poster 11</p>
+                                        </div>
+                                        <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('assets/56.png')">
+                                            <div class="w-full aspect-[3/4] bg-stone-50 rounded-[6px] border border-stone-200 overflow-hidden relative transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                                <img src="assets/56.png" class="absolute inset-0 w-full h-full object-cover" alt="Edu 12" />
+                                            </div>
+                                            <p class="text-[10px] font-semibold text-stone-800 uppercase tracking-tighter">Education Poster 12</p>
+                                        </div>
+                                        <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('assets/57.png')">
+                                            <div class="w-full aspect-[3/4] bg-stone-50 rounded-[6px] border border-stone-200 overflow-hidden relative transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                                <img src="assets/57.png" class="absolute inset-0 w-full h-full object-cover" alt="Edu 13" />
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('assets/58.png')">
+                                            <div class="w-full aspect-[3/4] bg-stone-50 rounded-[6px] border border-stone-200 overflow-hidden relative transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                                <img src="assets/58.png" class="absolute inset-0 w-full h-full object-cover" alt="Edu 14" />
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('assets/59.png')">
+                                            <div class="w-full aspect-[3/4] bg-stone-50 rounded-[6px] border border-stone-200 overflow-hidden relative transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                                <img src="assets/59.png" class="absolute inset-0 w-full h-full object-cover" alt="Edu 15" />
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('assets/60.png')">
+                                            <div class="w-full aspect-[3/4] bg-stone-50 rounded-[6px] border border-stone-200 overflow-hidden relative transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                                <img src="assets/60.png" class="absolute inset-0 w-full h-full object-cover" alt="Edu 16" />
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('assets/61.png')">
+                                            <div class="w-full aspect-[3/4] bg-stone-50 rounded-[6px] border border-stone-200 overflow-hidden relative transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                                <img src="assets/61.png" class="absolute inset-0 w-full h-full object-cover" alt="Edu 17" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- EVENT POSTER (Category 3) -->
+                                <div id="vfolder-event" class="vfolder-content hidden pb-10">
+                                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 w-full">
+                                        <!-- Assets 62-73 -->
+                                        <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('assets/62.png')">
+                                            <div class="w-full aspect-[3/4] bg-stone-50 rounded-[6px] border border-stone-200 overflow-hidden relative transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                                <img src="assets/62.png" class="absolute inset-0 w-full h-full object-cover" alt="Event 1" />
+                                            </div>
+                                            <p class="text-[10px] font-semibold text-stone-800 uppercase tracking-tighter">Event Poster 1</p>
+                                        </div>
+                                        <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('assets/63.png')">
+                                            <div class="w-full aspect-[3/4] bg-stone-50 rounded-[6px] border border-stone-200 overflow-hidden relative transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                                <img src="assets/63.png" class="absolute inset-0 w-full h-full object-cover" alt="Event 2" />
+                                            </div>
+                                            <p class="text-[10px] font-semibold text-stone-800 uppercase tracking-tighter">Event Poster 2</p>
+                                        </div>
+                                        <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('assets/64.png')">
+                                            <div class="w-full aspect-[3/4] bg-stone-50 rounded-[6px] border border-stone-200 overflow-hidden relative transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                                <img src="assets/64.png" class="absolute inset-0 w-full h-full object-cover" alt="Event 3" />
+                                            </div>
+                                            <p class="text-[10px] font-semibold text-stone-800 uppercase tracking-tighter">Event Poster 3</p>
+                                        </div>
+                                        <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('assets/65.png')">
+                                            <div class="w-full aspect-[3/4] bg-stone-50 rounded-[6px] border border-stone-200 overflow-hidden relative transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                                <img src="assets/65.png" class="absolute inset-0 w-full h-full object-cover" alt="Event 4" />
+                                            </div>
+                                            <p class="text-[10px] font-semibold text-stone-800 uppercase tracking-tighter">Event Poster 4</p>
+                                        </div>
+                                        <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('assets/66.png')">
+                                            <div class="w-full aspect-[3/4] bg-stone-50 rounded-[6px] border border-stone-200 overflow-hidden relative transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                                <img src="assets/66.png" class="absolute inset-0 w-full h-full object-cover" alt="Event 5" />
+                                            </div>
+                                            <p class="text-[10px] font-semibold text-stone-800 uppercase tracking-tighter">Event Poster 5</p>
+                                        </div>
+                                        <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('assets/67.png')">
+                                            <div class="w-full aspect-[3/4] bg-stone-50 rounded-[6px] border border-stone-200 overflow-hidden relative transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                                <img src="assets/67.png" class="absolute inset-0 w-full h-full object-cover" alt="Event 6" />
+                                            </div>
+                                            <p class="text-[10px] font-semibold text-stone-800 uppercase tracking-tighter">Event Poster 6</p>
+                                        </div>
+                                        <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('assets/68.png')">
+                                            <div class="w-full aspect-[3/4] bg-stone-50 rounded-[6px] border border-stone-200 overflow-hidden relative transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                                <img src="assets/68.png" class="absolute inset-0 w-full h-full object-cover" alt="Event 7" />
+                                            </div>
+                                            <p class="text-[10px] font-semibold text-stone-800 uppercase tracking-tighter">Event Poster 7</p>
+                                        </div>
+                                        <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('assets/69.png')">
+                                            <div class="w-full aspect-[3/4] bg-stone-50 rounded-[6px] border border-stone-200 overflow-hidden relative transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                                <img src="assets/69.png" class="absolute inset-0 w-full h-full object-cover" alt="Event 8" />
+                                            </div>
+                                            <p class="text-[10px] font-semibold text-stone-800 uppercase tracking-tighter">Event Poster 8</p>
+                                        </div>
+                                        <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('assets/70.png')">
+                                            <div class="w-full aspect-[3/4] bg-stone-50 rounded-[6px] border border-stone-200 overflow-hidden relative transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                                <img src="assets/70.png" class="absolute inset-0 w-full h-full object-cover" alt="Event 9" />
+                                            </div>
+                                            <p class="text-[10px] font-semibold text-stone-800 uppercase tracking-tighter">Event Poster 9</p>
+                                        </div>
+                                        <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('assets/71.png')">
+                                            <div class="w-full aspect-[3/4] bg-stone-50 rounded-[6px] border border-stone-200 overflow-hidden relative transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                                <img src="assets/71.png" class="absolute inset-0 w-full h-full object-cover" alt="Event 10" />
+                                            </div>
+                                            <p class="text-[10px] font-semibold text-stone-800 uppercase tracking-tighter">Event Poster 10</p>
+                                        </div>
+                                        <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('assets/72.png')">
+                                            <div class="w-full aspect-[3/4] bg-stone-50 rounded-[6px] border border-stone-200 overflow-hidden relative transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                                <img src="assets/72.png" class="absolute inset-0 w-full h-full object-cover" alt="Event 11" />
+                                            </div>
+                                            <p class="text-[10px] font-semibold text-stone-800 uppercase tracking-tighter">Event Poster 11</p>
+                                        </div>
+                                        <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('assets/73.png')">
+                                            <div class="w-full aspect-[3/4] bg-stone-50 rounded-[6px] border border-stone-200 overflow-hidden relative transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                                <img src="assets/73.png" class="absolute inset-0 w-full h-full object-cover" alt="Event 12" />
+                                            </div>
+                                            <p class="text-[10px] font-semibold text-stone-800 uppercase tracking-tighter">Event Poster 12</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- MOCK-UP (Category 4) -->
+                                <div id="vfolder-mockup" class="vfolder-content hidden pb-10">
+                                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 w-full">
+                                        <!-- Assets 74-77 -->
+                                        <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('assets/74.png')">
+                                            <div class="w-full aspect-square bg-stone-50 rounded-[6px] border border-stone-200 overflow-hidden relative transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                                <img src="assets/74.png" class="absolute inset-0 w-full h-full object-cover" alt="Mockup 1" />
+                                            </div>
+                                            <p class="text-[10px] font-semibold text-stone-800 uppercase tracking-tighter">Mock-up 1</p>
+                                        </div>
+                                        <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('assets/75.png')">
+                                            <div class="w-full aspect-square bg-stone-50 rounded-[6px] border border-stone-200 overflow-hidden relative transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                                <img src="assets/75.png" class="absolute inset-0 w-full h-full object-cover" alt="Mockup 2" />
+                                            </div>
+                                            <p class="text-[10px] font-semibold text-stone-800 uppercase tracking-tighter">Mock-up 2</p>
+                                        </div>
+                                        <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('assets/76.png')">
+                                            <div class="w-full aspect-square bg-stone-50 rounded-[6px] border border-stone-200 overflow-hidden relative transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                                <img src="assets/76.png" class="absolute inset-0 w-full h-full object-cover" alt="Mockup 3" />
+                                            </div>
+                                            <p class="text-[10px] font-semibold text-stone-800 uppercase tracking-tighter">Mock-up 3</p>
+                                        </div>
+                                        <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('assets/77.png')">
+                                            <div class="w-full aspect-square bg-stone-50 rounded-[6px] border border-stone-200 overflow-hidden relative transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                                <img src="assets/77.png" class="absolute inset-0 w-full h-full object-cover" alt="Mockup 4" />
+                                            </div>
+                                            <p class="text-[10px] font-semibold text-stone-800 uppercase tracking-tighter">Mock-up 4</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- POSTER (Category 5) -->
+                                <div id="vfolder-poster" class="vfolder-content hidden pb-10">
+                                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 w-full">
+                                        <!-- Assets 78-81 -->
+                                        <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('assets/78.png')">
+                                            <div class="w-full aspect-square bg-stone-50 rounded-[6px] border border-stone-200 overflow-hidden relative transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                                <img src="assets/78.png" class="absolute inset-0 w-full h-full object-cover" alt="Poster 1" />
+                                            </div>
+                                            <p class="text-[10px] font-semibold text-stone-800 uppercase tracking-tighter">Poster 1</p>
+                                        </div>
+                                        <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('assets/79.png')">
+                                            <div class="w-full aspect-square bg-stone-50 rounded-[6px] border border-stone-200 overflow-hidden relative transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                                <img src="assets/79.png" class="absolute inset-0 w-full h-full object-cover" alt="Poster 2" />
+                                            </div>
+                                            <p class="text-[10px] font-semibold text-stone-800 uppercase tracking-tighter">Poster 2</p>
+                                        </div>
+                                        <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('assets/80.png')">
+                                            <div class="w-full aspect-square bg-stone-50 rounded-[6px] border border-stone-200 overflow-hidden relative transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                                <img src="assets/80.png" class="absolute inset-0 w-full h-full object-cover" alt="Poster 3" />
+                                            </div>
+                                            <p class="text-[10px] font-semibold text-stone-800 uppercase tracking-tighter">Poster 3</p>
+                                        </div>
+                                        <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('assets/81.png')">
+                                            <div class="w-full aspect-square bg-stone-50 rounded-[6px] border border-stone-200 overflow-hidden relative transition-all duration-300 group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                                <img src="assets/81.png" class="absolute inset-0 w-full h-full object-cover" alt="Poster 4" />
+                                            </div>
+                                            <p class="text-[10px] font-semibold text-stone-800 uppercase tracking-tighter">Poster 4</p>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
+                        </div>
+                        </div>
                         </div>
                     </div>
 
@@ -1743,11 +1969,167 @@
             </div>
 
             <!-- Footer Text -->
-            <span
-                class="font-serif text-[18px] md:text-[22px] tracking-tight text-stone-700 mt-14 mb-4 opacity-90 block">(gabbtopia)</span>
 
             <!-- Modal close X button floating -->
             <button onclick="closeVisualModal()"
+                class="absolute top-0 right-0 p-3 text-stone-500 hover:text-stone-800 pointer-events-auto z-50">
+                <span class="material-symbols-outlined text-[32px]">close</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Campaign & Project Modal (Elegant Dark Brown) -->
+    <div id="campaignModal"
+        class="fixed inset-0 z-[100] hidden flex flex-col items-center justify-center p-2 md:p-4 font-sans">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-stone-900/60 backdrop-blur-md transition-opacity duration-300 opacity-0 cursor-pointer"
+            id="campaignBackdrop" onclick="closeCampaignModal()"></div>
+
+        <!-- Modal Content -->
+        <div id="campaignWrapper"
+            class="relative z-10 w-full max-w-[1240px] h-full max-h-[95vh] flex flex-col items-center justify-start pointer-events-none transition-all duration-500 scale-95 opacity-0 mt-4 md:mt-8">
+
+            <!-- Header Title -->
+            <h2 class="text-stone-800 text-2xl md:text-[34px] font-bold tracking-tight mb-6 pointer-events-auto z-50 text-center">
+            </h2>
+
+            <!-- Stack Layer Container -->
+            <div class="relative w-[95%] md:w-[92%] h-[60vh] md:h-[760px] pointer-events-auto">
+
+                <!-- Layer 1: Background Graphics Paper Tab -->
+                <div class="absolute inset-x-2 md:inset-x-6 top-0 bottom-8 bg-[#5D4037] rounded-t-[8px] rounded-b-[4px] shadow-sm transform rotate-[-2deg] origin-bottom-left"
+                    style="background-image: linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px); background-size: 15px 15px;">
+                    <div class="absolute top-[-24px] right-[10%] w-[250px] h-[30px] bg-[#5D4037] rounded-t-[8px] border-b-0 shadow-sm">
+                        <span class="absolute bottom-1 left-4 font-mono text-[9px] text-[#D7CCC8] tracking-widest opacity-80 uppercase">CAMPAIGN & PROJECT ARCHIVE</span>
+                    </div>
+                </div>
+
+                <!-- Layer 2: White Paper Tab -->
+                <div class="absolute inset-x-1 md:inset-x-3 top-[2%] bottom-[6%] bg-[#fefefe] rounded-t-[6px] rounded-b-[4px] shadow-sm border border-stone-200 transform rotate-[1deg]">
+                    <div class="absolute top-[-20px] left-[5%] w-[200px] h-[25px] bg-[#fefefe] rounded-t-[6px] border-t border-l border-r border-stone-200 shadow-sm flex items-end px-3 pb-1">
+                        <span class="text-[8px] opacity-40 font-mono">003-PROJECT</span>
+                    </div>
+                </div>
+
+                <!-- Layer 3: Main Brown Folder -->
+                <div class="absolute inset-0 bg-[#3E2723] rounded-t-[8px] rounded-b-[4px] shadow-lg drop-shadow-2xl flex flex-col p-3 md:p-6 pb-8 md:pb-12 border-t border-white/10">
+                    <!-- Front Folder Tab -->
+                    <div class="absolute top-[-22px] left-[30%] w-[220px] h-[22px] bg-[#3E2723] shadow-inner rounded-t-[8px] border-t border-l border-r border-white/5">
+                    </div>
+
+                    <!-- Inner Mockup Container -->
+                    <div class="w-full h-full bg-white rounded-[10px] md:rounded-[12px] shadow-[inset_0_0_10px_rgba(0,0,0,0.05)] border border-stone-200 flex flex-col overflow-hidden relative z-20">
+                        <!-- Safari Top Bar -->
+                        <div class="w-full h-10 md:h-[45px] bg-[#f3f3f4] border-b border-stone-300 flex items-center px-3 md:px-4 justify-between shrink-0">
+                            <div class="flex items-center gap-4 opacity-50">
+                                <span class="material-symbols-outlined text-[18px]">chevron_left</span>
+                                <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+                            </div>
+                            <div class="bg-white px-8 py-1 rounded-[6px] border border-stone-200 shadow-sm flex items-center gap-1 max-w-[300px] w-full justify-center">
+                                <span class="material-symbols-outlined text-[12px] text-stone-600">lock</span>
+                                <span class="text-[10px] font-medium text-stone-800">laraspraba.project</span>
+                            </div>
+                            <div class="flex items-center gap-3 opacity-60">
+                                <span class="material-symbols-outlined text-[18px]">ios_share</span>
+                                <span class="material-symbols-outlined text-[18px]">add</span>
+                            </div>
+                        </div>
+
+                        <!-- Browser Scroll Content -->
+                        <div class="flex-1 overflow-y-auto overflow-x-hidden p-4 md:p-8 flex flex-col gap-6 bg-white no-scrollbar">
+                            <div class="flex flex-col md:flex-row justify-between items-center w-full gap-4 border-b border-stone-100 pb-4">
+                                <h3 class="font-serif text-xl md:text-2xl font-bold text-[#3E2723]">Campaign & Project Portfolio</h3>
+                                <div class="flex gap-4 text-[11px] font-bold tracking-widest text-[#5D4037] uppercase">
+                                    <span class="underline underline-offset-4">Highlights</span>
+                                    <span class="opacity-40">Archive</span>
+                                    <span class="opacity-40">Process</span>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 w-full pb-10">
+                                <!-- Video 1 -->
+                                <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('https://www.youtube.com/embed/ecwFzKMd0YA?autoplay=1')">
+                                    <div class="w-full aspect-[4/5] bg-stone-100 rounded-[8px] border border-stone-200 overflow-hidden relative flex items-center justify-center transition-all duration-300 group-hover:shadow-[0_12px_24px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                        <img src="https://img.youtube.com/vi/ecwFzKMd0YA/0.jpg" class="absolute inset-0 w-full h-full object-cover z-0" alt="Video 1" />
+                                        <div class="w-12 h-12 rounded-full bg-[#3E2723]/60 backdrop-blur-md shadow-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:bg-[#3E2723]/80 z-10">
+                                            <div class="w-0 h-0 border-t-[7px] border-b-[7px] border-l-[10px] border-transparent border-l-white ml-1"></div>
+                                        </div>
+                                    </div>
+                                    <p class="text-[11px] font-bold text-stone-900 leading-tight mt-1">Campaign Project 01</p>
+                                </div>
+                                <!-- Video 2 -->
+                                <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('https://www.youtube.com/embed/MdIfi1rkjoA?autoplay=1')">
+                                    <div class="w-full aspect-[4/5] bg-stone-100 rounded-[8px] border border-stone-200 overflow-hidden relative flex items-center justify-center transition-all duration-300 group-hover:shadow-[0_12px_24px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                        <img src="https://img.youtube.com/vi/MdIfi1rkjoA/0.jpg" class="absolute inset-0 w-full h-full object-cover z-0" alt="Video 2" />
+                                        <div class="w-12 h-12 rounded-full bg-[#3E2723]/60 backdrop-blur-md shadow-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:bg-[#3E2723]/80 z-10">
+                                            <div class="w-0 h-0 border-t-[7px] border-b-[7px] border-l-[10px] border-transparent border-l-white ml-1"></div>
+                                        </div>
+                                    </div>
+                                    <p class="text-[11px] font-bold text-stone-900 leading-tight mt-1">Campaign Project 02</p>
+                                </div>
+                                <!-- Video 3 -->
+                                <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('https://www.youtube.com/embed/kRVne9pFOlU?autoplay=1')">
+                                    <div class="w-full aspect-[4/5] bg-stone-100 rounded-[8px] border border-stone-200 overflow-hidden relative flex items-center justify-center transition-all duration-300 group-hover:shadow-[0_12px_24px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                        <img src="https://img.youtube.com/vi/kRVne9pFOlU/0.jpg" class="absolute inset-0 w-full h-full object-cover z-0" alt="Video 3" />
+                                        <div class="w-12 h-12 rounded-full bg-[#3E2723]/60 backdrop-blur-md shadow-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:bg-[#3E2723]/80 z-10">
+                                            <div class="w-0 h-0 border-t-[7px] border-b-[7px] border-l-[10px] border-transparent border-l-white ml-1"></div>
+                                        </div>
+                                    </div>
+                                    <p class="text-[11px] font-bold text-stone-900 leading-tight mt-1">Campaign Project 03</p>
+                                </div>
+                                <!-- Video 4 -->
+                                <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('https://www.youtube.com/embed/QL8M69LrrxI?autoplay=1')">
+                                    <div class="w-full aspect-[4/5] bg-stone-100 rounded-[8px] border border-stone-200 overflow-hidden relative flex items-center justify-center transition-all duration-300 group-hover:shadow-[0_12px_24px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                        <img src="https://img.youtube.com/vi/QL8M69LrrxI/0.jpg" class="absolute inset-0 w-full h-full object-cover z-0" alt="Video 4" />
+                                        <div class="w-12 h-12 rounded-full bg-[#3E2723]/60 backdrop-blur-md shadow-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:bg-[#3E2723]/80 z-10">
+                                            <div class="w-0 h-0 border-t-[7px] border-b-[7px] border-l-[10px] border-transparent border-l-white ml-1"></div>
+                                        </div>
+                                    </div>
+                                    <p class="text-[11px] font-bold text-stone-900 leading-tight mt-1">Campaign Project 04</p>
+                                </div>
+                                <!-- Video 5 -->
+                                <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('https://www.youtube.com/embed/eHiLS7p_954?autoplay=1')">
+                                    <div class="w-full aspect-[4/5] bg-stone-100 rounded-[8px] border border-stone-200 overflow-hidden relative flex items-center justify-center transition-all duration-300 group-hover:shadow-[0_12px_24px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                        <img src="https://img.youtube.com/vi/eHiLS7p_954/0.jpg" class="absolute inset-0 w-full h-full object-cover z-0" alt="Video 5" />
+                                        <div class="w-12 h-12 rounded-full bg-[#3E2723]/60 backdrop-blur-md shadow-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:bg-[#3E2723]/80 z-10">
+                                            <div class="w-0 h-0 border-t-[7px] border-b-[7px] border-l-[10px] border-transparent border-l-white ml-1"></div>
+                                        </div>
+                                    </div>
+                                    <p class="text-[11px] font-bold text-stone-900 leading-tight mt-1">Campaign Project 05</p>
+                                </div>
+                                <!-- Video 6 -->
+                                <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('https://www.youtube.com/embed/sIwocVb_9qE?autoplay=1')">
+                                    <div class="w-full aspect-[4/5] bg-stone-100 rounded-[8px] border border-stone-200 overflow-hidden relative flex items-center justify-center transition-all duration-300 group-hover:shadow-[0_12px_24px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                        <img src="https://img.youtube.com/vi/sIwocVb_9qE/0.jpg" class="absolute inset-0 w-full h-full object-cover z-0" alt="Video 6" />
+                                        <div class="w-12 h-12 rounded-full bg-[#3E2723]/60 backdrop-blur-md shadow-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:bg-[#3E2723]/80 z-10">
+                                            <div class="w-0 h-0 border-t-[7px] border-b-[7px] border-l-[10px] border-transparent border-l-white ml-1"></div>
+                                        </div>
+                                    </div>
+                                    <p class="text-[11px] font-bold text-stone-900 leading-tight mt-1">Campaign Project 06</p>
+                                </div>
+                                <!-- Video 7 -->
+                                <div class="flex flex-col gap-2 group cursor-pointer" onclick="openMediaModal('https://www.youtube.com/embed/Gl-biORyj04?autoplay=1')">
+                                    <div class="w-full aspect-[4/5] bg-stone-100 rounded-[8px] border border-stone-200 overflow-hidden relative flex items-center justify-center transition-all duration-300 group-hover:shadow-[0_12px_24px_rgba(0,0,0,0.15)] group-hover:-translate-y-1">
+                                        <img src="https://img.youtube.com/vi/Gl-biORyj04/0.jpg" class="absolute inset-0 w-full h-full object-cover z-0" alt="Video 7" />
+                                        <div class="w-12 h-12 rounded-full bg-[#3E2723]/60 backdrop-blur-md shadow-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:bg-[#3E2723]/80 z-10">
+                                            <div class="w-0 h-0 border-t-[7px] border-b-[7px] border-l-[10px] border-transparent border-l-white ml-1"></div>
+                                        </div>
+                                    </div>
+                                    <p class="text-[11px] font-bold text-stone-900 leading-tight mt-1">Campaign Project 07</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Decor Elements -->
+                    <div class="absolute bottom-[-15px] left-[-25px] w-[90px] h-[90px] z-50 pointer-events-none">
+                        <img src="assets/14.png" alt="Decor" class="w-full h-full object-contain drop-shadow-xl animate-bounce" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal close X button -->
+            <button onclick="closeCampaignModal()"
                 class="absolute top-0 right-0 p-3 text-stone-500 hover:text-stone-800 pointer-events-auto z-50">
                 <span class="material-symbols-outlined text-[32px]">close</span>
             </button>
@@ -1974,6 +2356,39 @@
             content.classList.add('scale-100', 'opacity-100');
         }
 
+        function openCampaignModal() {
+            const modal = document.getElementById('campaignModal');
+            const backdrop = document.getElementById('campaignBackdrop');
+            const content = document.getElementById('campaignWrapper');
+
+            modal.classList.remove('hidden');
+            void modal.offsetWidth;
+
+            backdrop.classList.add('opacity-100');
+            backdrop.classList.remove('opacity-0');
+
+            content.classList.remove('scale-95', 'opacity-0');
+            content.classList.add('scale-100', 'opacity-100');
+        }
+
+        function closeCampaignModal() {
+            const modal = document.getElementById('campaignModal');
+            const backdrop = document.getElementById('campaignBackdrop');
+            const content = document.getElementById('campaignWrapper');
+
+            if (!modal || modal.classList.contains('hidden')) return;
+
+            backdrop.classList.remove('opacity-100');
+            backdrop.classList.add('opacity-0');
+
+            content.classList.remove('scale-100', 'opacity-100');
+            content.classList.add('scale-95', 'opacity-0');
+
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 500);
+        }
+
         function closeVisualModal() {
             const modal = document.getElementById('visualModal');
             const backdrop = document.getElementById('visualBackdrop');
@@ -2084,6 +2499,35 @@
         document.querySelectorAll('.reveal, .journey-reveal').forEach(el => {
             revealObserver.observe(el);
         });
+
+        function switchVisualSubFolder(folderName) {
+            // Update tabs
+            const tabs = ['infografis', 'education', 'event', 'mockup', 'poster'];
+            tabs.forEach(tab => {
+                const el = document.getElementById('tab-' + tab);
+                if (tab === folderName) {
+                    el.classList.add('bg-[#f5f5dc]', 'text-stone-800', 'active-visual-tab');
+                    el.classList.remove('bg-transparent', 'text-stone-500');
+                    el.style.borderBottom = "none";
+                } else {
+                    el.classList.remove('bg-[#f5f5dc]', 'text-stone-800', 'active-visual-tab');
+                    el.classList.add('bg-transparent', 'text-stone-500');
+                    el.style.borderBottom = "1px solid #d1d5db";
+                }
+            });
+
+            // Update content visibility
+            const folders = document.querySelectorAll('.vfolder-content');
+            folders.forEach(f => {
+                if (f.id === 'vfolder-' + folderName) {
+                    f.classList.remove('hidden');
+                    f.classList.add('block');
+                } else {
+                    f.classList.remove('block');
+                    f.classList.add('hidden');
+                }
+            });
+        }
 
         // Smooth Scroll for Nav Links
         document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
