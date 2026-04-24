@@ -312,36 +312,34 @@
     <!-- Tactile Paper Overlay -->
     <div class="paper-grain"></div>
     <!-- Navigation Shell -->
-    <nav class="fixed top-0 w-full z-50 pointer-events-none py-8 px-8 md:px-16">
-        <div class="max-w-[1440px] mx-auto flex justify-between items-center w-full">
-
+    <nav class="fixed top-0 w-full z-50 py-4 md:py-6 px-4 md:px-12 flex justify-center">
+        <div class="w-full max-w-[1440px] flex justify-between items-center bg-white/20 backdrop-blur-md md:bg-transparent rounded-full px-6 py-2 md:p-0">
             <!-- Logo -->
-            <div
-                class="font-serif italic text-2xl text-stone-900 dark:text-stone-100 pointer-events-auto drop-shadow-sm">
+            <div class="font-serif italic text-xl md:text-2xl text-stone-900 drop-shadow-sm shrink-0">
                 Laras Praba
             </div>
 
-            <!-- Central Pill -->
-            <div
-                class="absolute left-1/2 -translate-x-1/2 top-6 pointer-events-auto bg-[#FDFDFD]/80 backdrop-blur-xl dark:bg-stone-900/80 border border-stone-200/60 dark:border-stone-800/60 rounded-full px-8 py-3 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.1)] flex items-center space-x-10">
-                <a class="font-sans text-[15px] font-medium text-[#FF007F] transition-all duration-300 ease-in-out hover:opacity-70"
-                    href="#home">Home</a>
-                <a class="font-sans text-[15px] font-medium text-stone-500 hover:text-stone-900 dark:text-stone-400 dark:hover:text-stone-100 transition-all duration-300 ease-in-out"
-                    href="#journey">Journey</a>
-                <a class="font-sans text-[15px] font-medium text-stone-500 hover:text-stone-900 dark:text-stone-400 dark:hover:text-stone-100 transition-all duration-300 ease-in-out"
-                    href="#project">Projects</a>
-                <a class="font-sans text-[15px] font-medium text-stone-500 hover:text-stone-900 dark:text-stone-400 dark:hover:text-stone-100 transition-all duration-300 ease-in-out"
-                    href="#contact">Contact</a>
+            <!-- Central Pill (Simplified for Mobile) -->
+            <div class="hidden md:flex items-center space-x-8 bg-[#FDFDFD]/90 backdrop-blur-xl border border-stone-200/60 rounded-full px-8 py-2.5 shadow-sm">
+                <a class="font-sans text-[14px] font-medium text-[#FF007F] hover:opacity-70 transition-all" href="#home">Home</a>
+                <a class="font-sans text-[14px] font-medium text-stone-500 hover:text-stone-900 transition-all" href="#journey">Journey</a>
+                <a class="font-sans text-[14px] font-medium text-stone-500 hover:text-stone-900 transition-all" href="#project">Projects</a>
+                <a class="font-sans text-[14px] font-medium text-stone-500 hover:text-stone-900 transition-all" href="#contact">Contact</a>
             </div>
 
             <!-- Right Side Icons -->
-            <div class="flex items-center gap-5 text-[#FF007F] pointer-events-auto drop-shadow-sm">
-                <span
-                    class="material-symbols-outlined transition-all hover:scale-110 hover:opacity-70 cursor-pointer">mail</span>
-                <span
-                    class="material-symbols-outlined transition-all hover:scale-110 hover:opacity-70 cursor-pointer">motion_photos_on</span>
+            <div class="flex items-center gap-4 text-[#FF007F] drop-shadow-sm shrink-0">
+                <span class="material-symbols-outlined text-[20px] md:text-[24px] cursor-pointer">mail</span>
+                <!-- Mobile Menu placeholder if needed, current simplified icons -->
+                <span class="material-symbols-outlined text-[20px] md:text-[24px] cursor-pointer">motion_photos_on</span>
             </div>
-
+        </div>
+        <!-- Mobile Pill (Visible only on small screens) -->
+        <div class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-xl border border-stone-200/60 rounded-full px-6 py-2.5 shadow-lg flex items-center space-x-6 z-50">
+            <a class="text-[#FF007F]" href="#home"><span class="material-symbols-outlined text-xl">home</span></a>
+            <a class="text-stone-500" href="#journey"><span class="material-symbols-outlined text-xl">timeline</span></a>
+            <a class="text-stone-500" href="#project"><span class="material-symbols-outlined text-xl">folder</span></a>
+            <a class="text-stone-500" href="#contact"><span class="material-symbols-outlined text-xl">alternate_email</span></a>
         </div>
     </nav>
     <!-- Main Content Canvas -->
@@ -380,67 +378,67 @@
                     Creator | Digital Marketing Enthusiast</p>
             </div>
 
-            <!-- Decor Elements (Repositioned to frame the scene) -->
-            <div class="absolute w-36 h-36 z-10" style="top: 2%; left: 2%;">
+            <!-- Decor Elements (Lower Z-index, framing the scene) -->
+            <div class="absolute w-36 h-36 z-0" style="top: 2%; left: 2%;">
                 <div style="animation: popIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; opacity: 0;">
                     <img src="assets/2.png"
-                        class="w-full h-full object-contain drop-shadow-2xl hover:scale-110 transition-transform opacity-60 md:opacity-100"
+                        class="w-full h-full object-contain drop-shadow-2xl hover:scale-110 transition-transform opacity-30 md:opacity-50"
                         style="animation: float1 4s ease-in-out infinite 0.8s;" alt="Decor" />
                 </div>
             </div>
 
-            <div class="absolute w-44 h-44 z-30" style="top: -5%; right: 5%;">
+            <div class="absolute w-44 h-44 z-0" style="top: -5%; right: 5%;">
                 <div style="animation: popIn 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; opacity: 0;">
                     <img src="assets/3.png"
-                        class="w-full h-full object-contain drop-shadow-2xl hover:scale-110 transition-transform opacity-60 md:opacity-100"
+                        class="w-full h-full object-contain drop-shadow-2xl hover:scale-110 transition-transform opacity-30 md:opacity-50"
                         style="animation: float2 5s ease-in-out infinite 0.9s;" alt="Decor" />
                 </div>
             </div>
 
-            <div class="absolute w-32 h-32 z-30" style="bottom: 2%; left: 2%;">
+            <div class="absolute w-32 h-32 z-0" style="bottom: 2%; left: 2%;">
                 <div style="animation: popIn 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; opacity: 0;">
                     <img src="assets/4.png"
-                        class="w-full h-full object-contain drop-shadow-2xl hover:scale-110 transition-transform opacity-60 md:opacity-100"
+                        class="w-full h-full object-contain drop-shadow-2xl hover:scale-110 transition-transform opacity-30 md:opacity-50"
                         style="animation: float3 4.5s ease-in-out infinite 1s;" alt="Decor" />
                 </div>
             </div>
 
-            <div class="absolute w-40 h-40 z-10" style="bottom: -8%; right: -2%;">
+            <div class="absolute w-40 h-40 z-0" style="bottom: -8%; right: -2%;">
                 <div style="animation: popIn 0.85s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; opacity: 0;">
                     <img src="assets/5.png"
-                        class="w-full h-full object-contain drop-shadow-2xl hover:scale-110 transition-transform opacity-60 md:opacity-100"
+                        class="w-full h-full object-contain drop-shadow-2xl hover:scale-110 transition-transform opacity-30 md:opacity-50"
                         style="animation: float1 5.5s ease-in-out infinite 0.85s;" alt="Decor" />
                 </div>
             </div>
 
-            <div class="absolute w-28 h-28 z-10" style="top: 45%; left: -8%;">
+            <div class="absolute w-28 h-28 z-0" style="top: 45%; left: -8%;">
                 <div style="animation: popIn 1.1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; opacity: 0;">
                     <img src="assets/6.png"
-                        class="w-full h-full object-contain drop-shadow-2xl hover:scale-110 transition-transform opacity-40 md:opacity-100"
+                        class="w-full h-full object-contain drop-shadow-2xl hover:scale-110 transition-transform opacity-20 md:opacity-40"
                         style="animation: float2 4.2s ease-in-out infinite 1.1s;" alt="Decor" />
                 </div>
             </div>
 
-            <div class="absolute w-36 h-36 z-10" style="top: 75%; right: -6%;">
+            <div class="absolute w-36 h-36 z-0" style="top: 75%; right: -6%;">
                 <div style="animation: popIn 0.95s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; opacity: 0;">
                     <img src="assets/7.png"
-                        class="w-full h-full object-contain drop-shadow-2xl hover:scale-110 transition-transform opacity-60 md:opacity-100"
+                        class="w-full h-full object-contain drop-shadow-2xl hover:scale-110 transition-transform opacity-30 md:opacity-50"
                         style="animation: float3 5.2s ease-in-out infinite 0.95s;" alt="Decor" />
                 </div>
             </div>
 
-            <div class="absolute w-44 h-44 z-30" style="top: -12%; left: 42%;">
+            <div class="absolute w-44 h-44 z-0" style="top: -12%; left: 42%;">
                 <div style="animation: popIn 1.05s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; opacity: 0;">
                     <img src="assets/9.png"
-                        class="w-full h-full object-contain drop-shadow-2xl hover:scale-110 transition-transform -rotate-6"
+                        class="w-full h-full object-contain drop-shadow-2xl hover:scale-110 transition-transform -rotate-6 opacity-40"
                         style="animation: float1 4.8s ease-in-out infinite 1.05s;" alt="Decor" />
                 </div>
             </div>
 
-            <div class="absolute w-36 h-36 z-10" style="bottom: -10%; left: 46%;">
+            <div class="absolute w-36 h-36 z-0" style="bottom: -10%; left: 46%;">
                 <div style="animation: popIn 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; opacity: 0;">
                     <img src="assets/13.png"
-                        class="w-full h-full object-contain drop-shadow-2xl hover:scale-110 transition-transform"
+                        class="w-full h-full object-contain drop-shadow-2xl hover:scale-110 transition-transform opacity-30"
                         style="animation: float2 4.1s ease-in-out infinite 0.9s;" alt="Decor" />
                 </div>
             </div>
@@ -617,10 +615,11 @@
         <!-- Desktop Area -->
         <div class="relative w-full max-w-[1200px] min-h-[600px] mt-4">
 
-            <!-- Central ID Card Link (Replaced with 27.png) -->
-            <div
-                class="absolute top-[42%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10 md:top-[42%] lg:top-[42%] group cursor-pointer w-[300px] md:w-[350px]">
-
+        <!-- Folder Desktop Content Organized (Structured View) -->
+        <div class="w-full max-w-6xl mx-auto px-8 relative z-20 flex flex-col items-center">
+            
+            <!-- Foto About Me (ID Card) At the top -->
+            <div class="mb-14 group cursor-pointer w-[280px] md:w-[320px] reveal">
                 <a href="#about" class="block w-full h-full relative" title="View Biodata">
                     <div style="animation: float1 6s ease-in-out infinite;">
                         <img src="assets/27.png"
@@ -628,125 +627,51 @@
                             alt="About Me Biodata" />
                     </div>
                 </a>
-
-                <!-- Floating interaction hint -->
-                <div
-                    class="absolute -right-32 top-[10%] animate-pulse duration-1000 pointer-events-none opacity-80 flex gap-2 items-center hidden lg:flex z-30">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
-                        class="stroke-[#FF007F] w-8 h-8 rotate-[160deg]">
-                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke-width="1.5" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                    </svg>
-                    <span
-                        class="font-[Caveat,cursive] text-xl text-[#FF007F] rotate-[10deg] whitespace-nowrap mt-4 block"></span>
-                </div>
             </div>
 
-            <!-- The folders (Desktop) -->
-            <!-- 1: Top Left Pink -->
-            <div class="flex flex-col items-center absolute top-[6%] left-[28%] group w-32 cursor-pointer z-0 hidden md:flex reveal"
-                onclick="openModal()" style="transition-delay: 100ms;">
-                <div style="animation: float2 5s ease-in-out infinite 0.2s;">
-                    <img src="assets/1.png" alt="Social Media Handle"
-                        class="w-32 h-32 drop-shadow-[0_4px_12px_rgba(0,0,0,0.1)] object-contain transition-transform group-hover:scale-110" />
-                </div>
-                <span class="mt-3 text-stone-800 font-medium text-[15px] tracking-tight text-center leading-snug">Social
-                    Media<br />Handle</span>
-            </div>
-
-            <!-- 2: Top Right Yellow -->
-            <div class="flex flex-col items-center absolute top-[10%] right-[22%] group w-32 cursor-pointer z-0 hidden md:flex reveal"
-                style="transition-delay: 200ms;">
-                <div style="animation: float3 4.5s ease-in-out infinite 0.7s;">
-                    <img src="assets/20.png" alt="Campaign & Project"
-                        class="w-32 h-32 drop-shadow-[0_4px_12px_rgba(0,0,0,0.1)] object-contain transition-transform group-hover:scale-110" />
-                </div>
-                <span
-                    class="mt-3 text-stone-800 font-medium text-[15px] tracking-tight text-center leading-snug">Campaign<br />&amp;
-                    Project</span>
-            </div>
-
-            <!-- 3: Mid Left Blue -->
-            <div class="flex flex-col items-center absolute top-[40%] left-[18%] group w-32 cursor-pointer z-0 hidden md:flex reveal"
-                onclick="openContentModal()" style="transition-delay: 300ms;">
-                <div style="animation: float1 5.5s ease-in-out infinite 1.2s;">
-                    <img src="assets/18.png" alt="Social Media Content"
-                        class="w-32 h-32 drop-shadow-[0_4px_12px_rgba(0,0,0,0.1)] object-contain transition-transform group-hover:scale-110" />
-                </div>
-                <span class="mt-3 text-stone-800 font-medium text-[15px] tracking-tight text-center leading-snug">Social
-                    Media<br />Content</span>
-            </div>
-
-            <!-- 4: Mid Right Pink -->
-            <div class="flex flex-col items-center absolute top-[45%] right-[18%] group w-32 cursor-pointer z-0 hidden md:flex reveal"
-                onclick="openVisualModal()" style="transition-delay: 400ms;">
-                <div style="animation: float2 4s ease-in-out infinite 0.5s;">
-                    <img src="assets/19.png" alt="Visual Design Content"
-                        class="w-32 h-32 drop-shadow-[0_4px_12px_rgba(0,0,0,0.1)] object-contain transition-transform group-hover:scale-110" />
-                </div>
-                <span class="mt-3 text-stone-800 font-medium text-[15px] tracking-tight text-center leading-snug">Visual
-                    Design<br />Content</span>
-            </div>
-
-            <!-- 5: Bottom Left Yellow -->
-            <div class="flex flex-col items-center absolute bottom-[5%] left-[32%] group w-32 cursor-pointer z-0 hidden md:flex reveal"
-                onclick="openCreativeStyleModal()" style="transition-delay: 500ms;">
-                <div style="animation: float3 6s ease-in-out infinite 1.5s;">
-                    <img src="assets/17.png" alt="Creative Style"
-                        class="w-32 h-32 drop-shadow-[0_4px_12px_rgba(0,0,0,0.1)] object-contain transition-transform group-hover:scale-110" />
-                </div>
-                <span
-                    class="mt-3 text-stone-800 font-medium text-[15px] tracking-tight text-center leading-snug">Creative<br />Style</span>
-            </div>
-
-            <!-- Mobile Layout for Folders (Grid) -->
-            <div
-                class="md:hidden flex flex-wrap justify-center gap-x-4 gap-y-8 mt-[120px] pb-12 w-full px-4 relative z-20">
-                <div class="flex flex-col items-center w-[40%] group cursor-pointer active:scale-95 transition-transform"
-                    onclick="openModal()">
-                    <img src="assets/1.png" alt="Social Media Handle"
-                        class="w-24 h-24 drop-shadow-[0_4px_12px_rgba(0,0,0,0.1)] object-contain" />
-                    <span
-                        class="mt-2 text-stone-800 font-medium text-[13px] tracking-tight text-center leading-snug">Social
-                        Media<br />Handle</span>
+            <!-- Folders Grid (5 Folders neatly arranged) -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 md:gap-12 w-full justify-items-center mb-16">
+                <!-- 1: Social Media Handle -->
+                <div class="flex flex-col items-center group w-28 cursor-pointer reveal" onclick="openModal()">
+                    <div style="animation: float2 5s ease-in-out infinite 0.2s;">
+                        <img src="assets/1.png" alt="Social Media Handle" class="w-24 h-24 drop-shadow-[0_4px_12px_rgba(0,0,0,0.1)] object-contain transition-transform group-hover:scale-110" />
+                    </div>
+                    <span class="mt-3 text-stone-800 font-medium text-[14px] tracking-tight text-center leading-tight">Social Media<br/>Handle</span>
                 </div>
 
-                <div
-                    class="flex flex-col items-center w-[40%] group cursor-pointer active:scale-95 transition-transform">
-                    <img src="assets/20.png" alt="Campaign & Project"
-                        class="w-24 h-24 drop-shadow-[0_4px_12px_rgba(0,0,0,0.1)] object-contain" />
-                    <span
-                        class="mt-2 text-stone-800 font-medium text-[13px] tracking-tight text-center leading-snug">Campaign<br />&amp;
-                        Project</span>
+                <!-- 2: Campaign & Project -->
+                <div class="flex flex-col items-center group w-28 cursor-pointer reveal" style="transition-delay: 100ms;">
+                    <div style="animation: float3 4.5s ease-in-out infinite 0.7s;">
+                        <img src="assets/20.png" alt="Campaign & Project" class="w-24 h-24 drop-shadow-[0_4px_12px_rgba(0,0,0,0.1)] object-contain transition-transform group-hover:scale-110" />
+                    </div>
+                    <span class="mt-3 text-stone-800 font-medium text-[14px] tracking-tight text-center leading-tight">Campaign<br/>&amp; Project</span>
                 </div>
 
-                <div class="flex flex-col items-center w-[40%] group cursor-pointer active:scale-95 transition-transform"
-                    onclick="openContentModal()">
-                    <img src="assets/18.png" alt="Social Media Content"
-                        class="w-24 h-24 drop-shadow-[0_4px_12px_rgba(0,0,0,0.1)] object-contain" />
-                    <span
-                        class="mt-2 text-stone-800 font-medium text-[13px] tracking-tight text-center leading-snug">Social
-                        Media<br />Content</span>
+                <!-- 3: Social Media Content -->
+                <div class="flex flex-col items-center group w-28 cursor-pointer reveal" onclick="openContentModal()" style="transition-delay: 200ms;">
+                    <div style="animation: float1 5.5s ease-in-out infinite 1.2s;">
+                        <img src="assets/18.png" alt="Social Media Content" class="w-24 h-24 drop-shadow-[0_4px_12px_rgba(0,0,0,0.1)] object-contain transition-transform group-hover:scale-110" />
+                    </div>
+                    <span class="mt-3 text-stone-800 font-medium text-[14px] tracking-tight text-center leading-tight">Social Media<br/>Content</span>
                 </div>
 
-                <div class="flex flex-col items-center w-[40%] group cursor-pointer active:scale-95 transition-transform"
-                    onclick="openVisualModal()">
-                    <img src="assets/19.png" alt="Visual Design Content"
-                        class="w-24 h-24 drop-shadow-[0_4px_12px_rgba(0,0,0,0.1)] object-contain" />
-                    <span
-                        class="mt-2 text-stone-800 font-medium text-[13px] tracking-tight text-center leading-snug">Visual
-                        Design<br />Content</span>
+                <!-- 4: Visual Design Content -->
+                <div class="flex flex-col items-center group w-28 cursor-pointer reveal" onclick="openVisualModal()" style="transition-delay: 300ms;">
+                    <div style="animation: float2 4s ease-in-out infinite 0.5s;">
+                        <img src="assets/19.png" alt="Visual Design Content" class="w-24 h-24 drop-shadow-[0_4px_12px_rgba(0,0,0,0.1)] object-contain transition-transform group-hover:scale-110" />
+                    </div>
+                    <span class="mt-3 text-stone-800 font-medium text-[14px] tracking-tight text-center leading-tight">Visual Design<br/>Content</span>
                 </div>
 
-                <div
-                    class="flex flex-col items-center w-[40%] group cursor-pointer active:scale-95 transition-transform"
-                    onclick="openCreativeStyleModal()">
-                    <img src="assets/17.png" alt="Creative Style"
-                        class="w-24 h-24 drop-shadow-[0_4px_12px_rgba(0,0,0,0.1)] object-contain" />
-                    <span
-                        class="mt-2 text-stone-800 font-medium text-[13px] tracking-tight text-center leading-snug">Creative<br />Style</span>
+                <!-- 5: Creative Style -->
+                <div class="flex flex-col items-center group w-28 cursor-pointer reveal" onclick="openCreativeStyleModal()" style="transition-delay: 400ms;">
+                    <div style="animation: float3 6s ease-in-out infinite 1.5s;">
+                        <img src="assets/17.png" alt="Creative Style" class="w-24 h-24 drop-shadow-[0_4px_12px_rgba(0,0,0,0.1)] object-contain transition-transform group-hover:scale-110" />
+                    </div>
+                    <span class="mt-3 text-stone-800 font-medium text-[14px] tracking-tight text-center leading-tight">Creative<br/>Style</span>
                 </div>
             </div>
+        </div>
 
         </div>
     </section>
@@ -811,105 +736,61 @@
             </div>
         </div>
 
-        <!-- Fastener Graphic Overlay (Bridging White and Black Sections) -->
-        <div class="absolute left-1/2 top-[76%] md:top-[45%] -translate-x-1/2 -translate-y-1/2 z-20 flex flex-col items-center gap-16 md:gap-14">
+        <!-- Fastener Graphic Overlay (Bridging Sections) -->
+        <div class="absolute left-1/2 top-full -translate-x-1/2 -translate-y-1/2 z-20 flex flex-col items-center gap-6">
             <!-- Top Circle -->
-            <div class="w-14 h-14 md:w-24 md:h-24 rounded-full bg-[#FF007F] shadow-[0_4px_15px_rgba(255,0,127,0.4)] flex items-center justify-center border-2 border-[#D6006B] relative overflow-hidden">
-                <div class="absolute inset-0 bg-stone-900/10 mix-blend-overlay"></div>
-                <div class="w-4 h-4 md:w-8 md:h-8 rounded-full bg-[#222222] border-4 border-[#888888] shadow-inner"></div>
+            <div class="w-12 h-12 md:w-20 md:h-20 rounded-full bg-[#FF007F] shadow-lg flex items-center justify-center border border-[#D6006B] relative">
+                <div class="w-3 h-3 md:w-6 md:h-6 rounded-full bg-[#222222] border-2 border-[#888888] shadow-inner"></div>
             </div>
-
-            <!-- String Pattern SVG -->
-            <div class="absolute inset-x-0 top-1/2 -translate-y-1/2 h-40 md:h-60 flex justify-center pointer-events-none opacity-80">
-                <svg width="100%" height="100%" viewBox="0 0 100 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M50 30 L45 75 L55 75 L50 30" stroke="#FF007F" stroke-width="0.3" opacity="0.3" />
-                    <path d="M50 120 L45 75 L55 75 L50 120" stroke="#FF007F" stroke-width="0.3" opacity="0.3" />
-                    <path d="M50 30 Q55 75 50 120" stroke="#900048" stroke-width="1.2" />
-                    <path d="M50 30 Q45 75 50 120" stroke="#900048" stroke-width="1.2" />
-                    <path d="M50 30 L50 120" stroke="#900048" stroke-width="0.3" stroke-dasharray="2 2" />
-                </svg>
-            </div>
-
             <!-- Bottom Circle -->
-            <div class="w-14 h-14 md:w-24 md:h-24 rounded-full bg-[#FF007F] shadow-[0_4px_15px_rgba(255,0,127,0.4)] flex items-center justify-center border-2 border-[#D6006B] relative overflow-hidden">
-                <div class="absolute inset-0 bg-stone-900/10 mix-blend-overlay"></div>
-                <div class="w-4 h-4 md:w-8 md:h-8 rounded-full bg-[#222222] border-4 border-[#888888] shadow-inner"></div>
+            <div class="w-12 h-12 md:w-20 md:h-20 rounded-full bg-[#FF007F] shadow-lg flex items-center justify-center border border-[#D6006B] relative">
+                <div class="w-3 h-3 md:w-6 md:h-6 rounded-full bg-[#222222] border-2 border-[#888888] shadow-inner"></div>
             </div>
         </div>
 
-
-
         <!-- Bottom Half (Black Content) -->
-        <div class="w-full bg-[#000000] pt-32 pb-24 md:pt-48 md:pb-32 px-8 reveal">
-            <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-end gap-16">
-                <!-- Left side Contacts -->
-                <div class="flex flex-col gap-6 text-white font-medium">
-                    <div class="flex flex-col gap-0.5">
-                        <span class="text-stone-500 text-[10px] md:text-[11px] uppercase tracking-[2px]">Phone</span>
-                        <a href="tel:+628570039978"
-                            class="text-base md:text-xl hover:text-[#FF007F] transition-colors">+62 857 0039 978</a>
-                    </div>
-                    <div class="flex flex-col gap-4 mt-2">
-                        <!-- Instagram -->
-                        <a href="https://instagram.com/larasprabaa/" target="_blank"
-                            class="flex items-center gap-3 text-stone-300 hover:text-white group transition-colors">
-                            <svg class="w-5 h-5 fill-current text-stone-500 group-hover:text-[#FF007F] transition-colors"
-                                viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                            </svg>
-                            <span class="text-xs md:text-sm tracking-wide">@larasprabaa</span>
-                        </a>
-                        <!-- TikTok -->
-                        <a href="https://www.tiktok.com/@laraspraba" target="_blank"
-                            class="flex items-center gap-3 text-stone-300 hover:text-white group transition-colors">
-                            <svg class="w-5 h-5 fill-current text-stone-500 group-hover:text-[#FF007F] transition-colors"
-                                viewBox="0 0 24 24">
-                                <path
-                                    d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.04-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.58-1.01V14.5c0 2.1-.59 4.1-1.89 5.6-1.3 1.5-3.2 2.4-5.2 2.4-2.1 0-4.1-.9-5.4-2.4-1.3-1.5-1.8-3.5-1.8-5.5 0-2.1.6-4.1 1.9-5.6 1.3-1.5 3.1-2.4 5.1-2.4.45 0 .91.04 1.35.12V10.8c-.46-.14-.94-.21-1.43-.21-1.12 0-2.19.49-2.88 1.32-.69.83-.98 1.91-.98 2.98 0 1.07.29 2.15.98 2.98.69.83 1.76 1.32 2.88 1.32 1.12 0 2.2-.49 2.89-1.32.69-.83.97-1.91.97-2.98V0z" />
-                            </svg>
-                            <span class="text-xs md:text-sm tracking-wide">@laraspraba</span>
-                        </a>
-                        <!-- LinkedIn -->
-                        <a href="https://linkedin.com/in/laraspraba/" target="_blank"
-                            class="flex items-center gap-3 text-stone-300 hover:text-white group transition-colors">
-                            <svg class="w-5 h-5 fill-current text-stone-500 group-hover:text-[#FF007F] transition-colors"
-                                viewBox="0 0 24 24">
-                                <path
-                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                            </svg>
-                            <span class="text-xs md:text-sm tracking-wide">@laraspraba</span>
-                        </a>
+        <div class="w-full bg-[#000000] pt-16 pb-16 px-8 relative">
+            <div class="max-w-[1240px] mx-auto flex flex-col items-center gap-10">
+                <!-- Signature (Now at Top of Black Section) -->
+                <div class="flex flex-col items-center text-center">
+                    <span class="text-white text-base md:text-lg mb-1 opacity-80" style="font-family: 'Playfair Display', serif;">Warm Regards,</span>
+                    <div class="text-white text-[48px] md:text-[68px] leading-none mb-6 select-none pointer-events-none"
+                        style="font-family: 'Dancing Script', cursive; transform: rotate(-2deg);">
+                        Laras Praba
                     </div>
                 </div>
 
-                <!-- Right side Signature -->
-                <div class="flex flex-col items-end">
-                    <span class="text-white text-base md:text-lg mb-2 opacity-80"
-                        style="font-family: 'Playfair Display', serif;">Warm Regards,</span>
-                    <!-- Mimicking Signature with Font -->
-                    <div class="text-white text-[44px] md:text-[62px] leading-tight select-none pointer-events-none"
-                        style="font-family: 'Dancing Script', cursive; transform: rotate(-4deg); filter: drop-shadow(0 4px 12px rgba(255,255,255,0.1));">
-                        Laras <br /> <span class="ml-10">Praba</span>
+                <!-- Contacts Section (Grid at Very Bottom) -->
+                <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 pt-10 border-t border-white/5">
+                    <!-- Phone -->
+                    <div class="flex flex-col items-center md:items-start gap-1">
+                        <span class="text-stone-500 text-[10px] uppercase tracking-[3px]">Phone</span>
+                        <a href="tel:+628570039978" class="text-stone-100 text-sm md:text-base hover:text-[#FF007F] transition-colors">+62 857 0039 978</a>
+                    </div>
+                    
+                    <!-- Socials (Instagram, TikTok) -->
+                    <div class="flex flex-col items-center gap-1">
+                        <span class="text-stone-500 text-[10px] uppercase tracking-[3px]">Social</span>
+                        <div class="flex gap-6">
+                            <a href="https://instagram.com/larasprabaa/" target="_blank" class="text-stone-400 hover:text-white transition-colors">Instagram</a>
+                            <a href="https://www.tiktok.com/@laraspraba" target="_blank" class="text-stone-400 hover:text-white transition-colors">TikTok</a>
+                        </div>
+                    </div>
+
+                    <!-- LinkedIn -->
+                    <div class="flex flex-col items-center md:items-end gap-1">
+                        <span class="text-stone-500 text-[10px] uppercase tracking-[3px]">Professional</span>
+                        <a href="https://linkedin.com/in/laraspraba/" target="_blank" class="text-stone-100 text-sm md:text-base hover:text-[#FF007F] transition-colors">LinkedIn</a>
                     </div>
                 </div>
-            </div>
 
-            <!-- Bottom Legal -->
-            <div
-                class="max-w-[1200px] mx-auto mt-24 pt-8 border-t border-white/10 flex justify-center text-[10px] text-stone-600 uppercase tracking-[4px]">
-                © 2024 LARAS PRABA - ALL RIGHTS RESERVED
+                <!-- Copyright -->
+                <div class="text-[9px] text-stone-700 uppercase tracking-[4px] mt-4 opacity-50">
+                    © 2024 LARAS PRABA
+                </div>
             </div>
         </div>
     </section>
-    <!-- FAB for Contextual Action -->
-    <div class="fixed bottom-8 right-16 z-50">
-        <button
-            class="bg-[#FF007F] text-white p-4 rounded-full shadow-lg hover:scale-95 transition-transform flex items-center gap-2">
-            <span class="material-symbols-outlined" data-weight="fill">chat_bubble</span>
-            <span class="font-label-caps">Inquire</span>
-        </button>
-    </div>
 
     <!-- Scrapbook Binder Modal Overlay -->
     <div id="binderModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-2 md:p-4">
